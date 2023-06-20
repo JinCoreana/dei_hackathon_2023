@@ -1,29 +1,31 @@
-from PyPDF2 import PdfReader
+import PyPDF2
 import re
 import requests
 import json
+import typing
+from pprint import pprint
 
 
 # Read PDF file
-def extract_text(filepath):
-    reader = PdfReader(filepath)
+def extract_text(filepath: str) -> str:
+    reader = PyPDF2.PdfReader(filepath)
 
     all_text = ""
 
     # Extract text from the PDF file
     for page in reader.pages:
         page_text = page.extract_text()
-        all_text += text + " "
+        all_text += page_text + " "
 
     return all_text
 
 
-def _get_personal_data(id):
+def _get_personal_data(id: int) -> dict:
     response = requests.get(f"https://subdomain.sage.hr/api/recruitment/applicants/{id}")
     return json.loads(response.read())
 
 
-def _get_keywords(personal_data):
+def _get_keywords(personal_data) -> typing.List[str]:
     keyword_list = []
     for field, field_value in personal_data["data"].items():
         if " " in str(field_value):
@@ -33,17 +35,8 @@ def _get_keywords(personal_data):
     return keyword_list
 
 
-def final_filter(id, text):
+def final_filter(id: int, text: str) -> str:
     # personal_data = _get_personal_data(id)
-    keyword_list = _get_keywords(personal_data)
-    for keyword in keyword_list:
-        text = re.sub(str(keyword), "*****", text, flags=re.IGNORECASE)
-    return text
-
-
-def main():
-    filename = 'example_cv.pdf'
-    text = extract_text(filename)
     personal_data = {
         "data": {
             "id": 3,
@@ -64,7 +57,18 @@ def main():
             "referrer": {}
         }
     }
-    print(final_filter(23, text))
+
+    keyword_list = _get_keywords(personal_data)
+    for keyword in keyword_list:
+        text = re.sub(str(keyword), "*****", text, flags=re.IGNORECASE)
+    return text
+
+
+def main():
+    filename = 'example_cv.pdf'
+    text = extract_text(filename)
+
+    pprint(final_filter(id=3, text=text))
 
 
 if __name__ == "__main__":
