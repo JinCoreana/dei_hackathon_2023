@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/homePage/HomePage";
 import AccommodationRequestPage from "./pages/accommodationRequest/AccommodationRequestPage";
