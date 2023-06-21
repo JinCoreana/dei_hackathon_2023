@@ -8,7 +8,7 @@ export interface VideoCardProps {
 
 const VideoCard = ({ url, title }: VideoCardProps) => {
   return (
-    <Box pr={30}>
+    <Box mr={130} ml={-100}>
       <iframe
         className="videoFrame"
         frameBorder={0}

@@ -14,14 +14,12 @@ const VideoCarousel = (): ReactElement => {
       align-items="center"
       justify-items="center"
     >
-      <Box>
-        <SectionTitle title="Success Stories" />
-        <Carousel enableSlideSelector={false}>
-          {videosForCarousel.map((video) => {
-            return <VideoCard url={video.url} title={video.title} />;
-          })}
-        </Carousel>
-      </Box>
+      <SectionTitle title="Success Stories" />
+      <Carousel enableSlideSelector={false}>
+        {videosForCarousel.map((video) => {
+          return <VideoCard url={video.url} title={video.title} />;
+        })}
+      </Carousel>
     </GridItem>
   );
 };

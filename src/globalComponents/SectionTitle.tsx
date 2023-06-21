@@ -7,7 +7,7 @@ interface SectionTitleProps {
 
 const SectionTitle = ({ title }: SectionTitleProps): ReactElement => {
   return (
-    <Typography variant="h4" fontSize="36px" ml={130} mb={30}>
+    <Typography variant="h4" fontSize="36px" ml={100} mb={50}>
       {title}
     </Typography>
   );
