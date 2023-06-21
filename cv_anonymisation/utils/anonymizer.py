@@ -22,7 +22,7 @@ def extract_text(filepath: str) -> str:
 
 def _get_personal_data(id: int) -> dict:
     response = requests.get(f"https://subdomain.sage.hr/api/recruitment/applicants/{id}")
-    return json.loads(response.read())
+    return json.loads(response.read()) # type: ignore
 
 
 def _get_keywords(personal_data) -> typing.List[str]:
