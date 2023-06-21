@@ -4,19 +4,23 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import CarbonProvider from "carbon-react/lib/components/carbon-provider";
 import { sageTheme } from "carbon-react/lib/style/themes";
 import HomePage from "./pages/homePage/HomePage";
-import AccommodationRequestPage from "./pages/accommodationRequest/AccommodationRequestPage";
+import AccommodationRequestPage from "./pages/adjustmentRequest/AdjustmentRequestPage";
+import ChatBotPage from "./pages/chatbot/ChatBotPage";
+import GlobalStyle from "carbon-react/lib/style/global-style";
 import "carbon-react/lib/style/fonts.css";
 
 ReactDOM.render(
   <React.StrictMode>
+    <GlobalStyle />
     <CarbonProvider theme={sageTheme} validationRedesignOptIn>
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route
-            path="/accommodation_request"
+            path="/adjustment_request"
             element={<AccommodationRequestPage />}
           />
+          <Route path="/chat_with_us" element={<ChatBotPage />} />
         </Routes>
       </Router>
     </CarbonProvider>
