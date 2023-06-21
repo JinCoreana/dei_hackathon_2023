@@ -1,0 +1,52 @@
+.mainContainer{
+    width: auto;
+    height: auto;    
+    background-color: #D9D9D9; 
+    padding: 20px;   
+}
+
+.containerOne{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.carouselHeading{
+    font-size: 36;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding:25px;
+    padding-left: 20px;
+    color: #000;
+    text-underline-position: under;
+}
+
+.carouselContainer{
+    width: auto; 
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items:"center";
+}
+
+.videoFrame{
+    width: 450px;
+    height: 260px;    
+}
+
+.captionContainer{
+    background-color: bisque;
+    height: fit-content;
+    width: fit-content;
+    align-content:"center";  
+    display: inline-block;       
+}
+
+.videoCaption{
+    width: 450px;
+    height: fit-content; 
+    display: flex;
+    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
