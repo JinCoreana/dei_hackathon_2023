@@ -5,4 +5,10 @@ build/
 
 # vscode
 .vscode
+<<<<<<< HEAD
 .vs
+=======
+
+# Pycache
+**/__pycache__/
+>>>>>>> 6c913cf (basic functionality)

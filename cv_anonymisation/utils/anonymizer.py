@@ -64,12 +64,11 @@ def final_filter(id: int, text: str) -> str:
     return text
 
 
-def main():
-    filename = 'example_cv.pdf'
+def anonymize(filename):
+    #filename = 'example_cv.pdf'
     text = extract_text(filename)
 
-    pprint(final_filter(id=3, text=text))
+    return final_filter(id=3, text=text)
 
 
-if __name__ == "__main__":
-    main()
+
