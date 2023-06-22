@@ -9,6 +9,8 @@ DOWNLOAD_FOLDER = os.path.join(APP_ROOT, 'CVs/downloads')
 ALLOWED_EXTENSIONS = {'txt', 'pdf'}
 
 app = Flask(__name__)
+# Set the secret key to some random bytes. Keep this really secret!
+app.secret_key = b'vjRyCsBPetq5aW5n'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['DOWNLOAD_FOLDER'] = DOWNLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 * 1000 # Limit file size to 16 MB
@@ -18,10 +20,10 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/uploads/<name>')
+@app.route('/uploads/<string:name>')
 def download_file(name):
 
-    return send_from_directory(app.config["DOWNLOAD_FOLDER"], name, as_attachment=True)
+    return send_from_directory(app.config["DOWNLOAD_FOLDER"], name, as_attachment=False)
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
