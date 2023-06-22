@@ -3,6 +3,8 @@ import { STAGES } from "../constants/Stages";
 import { ReactElement, useEffect, useState } from "react";
 import { Stages, Vacancy } from "../ProgressTracker.types";
 import Typography from "carbon-react/lib/components/typography/typography.component";
+import Link from "carbon-react/lib/components/link";
+import { borderWidth200 } from "@sage/design-tokens/js/base/common";
 
 interface ProgressCardProps {
   selectedVacancy: Vacancy;
@@ -19,8 +21,8 @@ const ProgressCards = ({
 
   return (
     <>
-      <Box justifySelf="center">
-        <Box display="flex" flexDirection="row">
+      <Box>
+        <Box display="flex" flexDirection="row" flexWrap="wrap">
           {STAGES.map((stage: Stages) => {
             return (
               <Box
@@ -34,6 +36,9 @@ const ProgressCards = ({
                 bg={selectedStage === stage.title ? "#F5C519" : null}
               >
                 <Box
+                  id={`outlineBox${
+                    selectedVacancy.status === stage.title ? "Selected" : ""
+                  }`}
                   onClick={() => {
                     setSelectedStage(stage.title);
                   }}
@@ -41,10 +46,15 @@ const ProgressCards = ({
                   height={250}
                   bg={
                     selectedVacancy.status === stage.title
-                      ? "#00A65C"
-                      : "#00293F"
+                      ? "#007E45"
+                      : "#D9E0E4"
                   }
                   borderRadius="borderRadius400"
+                  style={{
+                    borderStyle: "solid",
+                    borderWidth200,
+                    borderColor: "black",
+                  }}
                 >
                   <Box
                     display="flex"
@@ -56,7 +66,9 @@ const ProgressCards = ({
                     <Typography
                       variant="h3"
                       fontSize="24px"
-                      color="white"
+                      color={
+                        selectedVacancy.status === stage.title ? "white" : ""
+                      }
                       mb={1}
                     >
                       {stage.title}
@@ -64,7 +76,7 @@ const ProgressCards = ({
 
                     {selectedVacancy.status === stage.title ? (
                       <Typography variant="p" fontSize="24px" color="white">
-                        (Your current stage){" "}
+                        (Your current stage)
                       </Typography>
                     ) : null}
                   </Box>
@@ -73,18 +85,39 @@ const ProgressCards = ({
             );
           })}
         </Box>
-        {selectedStage && (
-          <Box width="800px" height="100px" mt={50} ml={100} >
-            <Typography variant="h3" fontSize="32px" mb={3}>
+        {selectedStage ? (
+          <Box
+            width="800px"
+            height="100px"
+            mt={50}
+            ml={100}
+            style={{ whiteSpace: "pre-line" }}
+          >
+            <Typography variant="h3" fontSize="36px" mb={3}>
               {selectedStage}
             </Typography>
 
-            <Typography fontSize="24px">
-              {STAGES.filter((stage) => stage.title === selectedStage).map(
-                (stage) => stage.description
-              )}
-            </Typography>
+            {STAGES.filter((stage) => stage.title === selectedStage).map(
+              (stage) => (
+                <>
+                  <Typography fontSize="24px" lineHeight="30px" style={{}}>
+                    {stage.description}
+                  </Typography>
+                  <Typography
+                    fontSize="24px"
+                    style={{ color: "green", textDecoration: "underline" }}
+                  >
+                    {stage.linkText}
+                  </Typography>
+                </>
+              )
+            )}
           </Box>
+        ) : (
+          <Typography fontSize="24px" mt={50}>
+            Select an application to find out more about the stages for that
+            application.
+          </Typography>
         )}
       </Box>
     </>

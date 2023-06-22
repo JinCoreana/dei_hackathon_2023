@@ -11,9 +11,8 @@ import StageArrowBackground from "../../../../assets/images/stageArrowBackground
 import SectionTitle from "../../../../globalComponents/SectionTitle";
 
 const ProgressTracker = (): ReactElement => {
-  const [selectedApplication, setSelectedApplication] = useState(
-    ApplicantData.vacancies[0].job_title
-  );
+  const [selectedApplication, setSelectedApplication] =
+    useState("Please Select");
   return (
     <GridItem alignSelf="stretch" justifySelf="stretch">
       <SectionTitle title="Your Sage application journey" mt={50} />
@@ -21,14 +20,15 @@ const ProgressTracker = (): ReactElement => {
         <Typography variant="p" fontSize="24px" ml={100} mb={0}>
           See the status of your application for
         </Typography>
+
         {ApplicantData.vacancies.length === 1 ? (
           <Typography variant="h1">{selectedApplication}</Typography>
         ) : (
-          <Box width="300px">
+          <Box width="400px">
             <Select
               size="large"
               ml="20px"
-              maxWidth="400px"
+              placeholder="Select application"
               value={selectedApplication}
               onChange={(e) => setSelectedApplication(e.target.value)}
             >
@@ -45,6 +45,9 @@ const ProgressTracker = (): ReactElement => {
           </Box>
         )}
       </Box>
+      <Typography variant="p" fontSize="24px" ml={100} mt={50}>
+        Select each stage below to find out more information.
+      </Typography>
       <Box
         display="flex"
         width="100%"
@@ -66,7 +69,7 @@ const ProgressTracker = (): ReactElement => {
               selectedVacancy={
                 ApplicantData.vacancies.filter(
                   (vacancy) => vacancy.job_title === selectedApplication
-                )[0]
+                )[0] || ""
               }
             />
           </Box>

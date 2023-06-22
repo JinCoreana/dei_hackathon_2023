@@ -4,56 +4,63 @@ import { ReactElement } from "react";
 import Image from "carbon-react/lib/components/image";
 import { GridItem } from "carbon-react/lib/components/grid";
 import firstIcon from "../../../assets/images/MicrosoftTeams-image (18) 2.png";
-import fivthIcon from "../../../assets/images/MicrosoftTeams-image (15) 2.png";
+import fifthIcon from "../../../assets/images/more.png";
 import sixthIcon from "../../../assets/images/MicrosoftTeams-image (16) 3.png";
 import fourthIcon from "../../../assets/images/MicrosoftTeams-image (17) 2.png";
 import secondIcon from "../../../assets/images/MicrosoftTeams-image (19) 2.png";
 import thirdIcon from "../../../assets/images/image 20.png";
 import SectionTitle from "../../../globalComponents/SectionTitle";
+import { useNavigate } from "react-router-dom";
 const QuickLinks = (): ReactElement => {
+  const navigateTo = useNavigate();
   const quicklinkGrid = [
     {
-      bgColor: "#000000",
+      bgColor: "#00324C",
       iconImage: firstIcon,
       title: "My Applications",
-      subtitle: "Review all your Sage applications and documents shared",
+      subtitle: "View application details and documents",
+      external: true,
       href: "/",
     },
     {
-      bgColor: "#31B67A",
+      bgColor: "#007E45",
       iconImage: secondIcon,
-      title: "What to Expect",
-      subtitle: "Information to put you at ease",
+      title: "Interview process guide",
+      subtitle: "Find out what to expect at each stage",
+      external: true,
       href: "/",
     },
     {
-      bgColor: "#00293F",
+      bgColor: "#00324C",
       iconImage: thirdIcon,
-      title: "Help me to succeed",
-      subtitle: "Preparation resources",
+      title: "Preparation resources",
+      subtitle: "Prepare for interview at your own pace",
+      external: true,
       href: "/",
     },
     {
-      bgColor: "#00293F",
+      bgColor: "#007E45",
       iconImage: fourthIcon,
-      title: "Request an Adjustment",
-      subtitle: "What do you need to thrive",
-      href: "/",
+      title: "Adjustments",
+      subtitle: "Request an adjustment for interview",
+      external: false,
+      href: "/adjustment_request",
     },
     {
-      bgColor: "#000000",
-      iconImage: fivthIcon,
-      title: "Find a Mentor/Buddy",
-      subtitle: "Get support from a Sage Colleagues to help you succeed",
-      href: "/",
+      bgColor: "#00324C",
+      iconImage: fifthIcon,
+      title: "Learn more about Sage",
+      subtitle: "Go to the Sage careers page",
+      external: true,
+      href: "https://www.sage.com/en-gb/company/careers/career-search",
     },
     {
-      bgColor: "#00A65C",
+      bgColor: "#007E45",
       iconImage: sixthIcon,
-      title: "Chat to Us",
-      subtitle:
-        "Keep track of important notifications or any questions we can help you with",
-      href: "/",
+      title: "Get in touch",
+      subtitle: "Ask us any questions",
+      external: false,
+      href: "/chat_with_us",
     },
   ];
 
@@ -61,11 +68,16 @@ const QuickLinks = (): ReactElement => {
     <>
       <GridItem alignSelf="stretch" justifySelf="stretch" gridColumn="1/13">
         <SectionTitle title="Quick links:" mt={100} />
-        <Typography color="black" variant="h4" fontSize="24px" ml={100} mb={50}>
-          Building a great career is something that's important to all of us and
-          we want you to reach your career goals right here at Sage.
-          <br></br>Use the links below to help you with your application
-          journey.
+        <Typography
+          variant="h4"
+          fontSize="24px"
+          lineHeight="30px"
+          ml={100}
+          mb={50}
+        >
+          We know how important your career is, and we want you to succeed and
+          reach your goals here at Sage. <br />
+          Use the links below to help you with your application journey.
         </Typography>
 
         <Box
@@ -87,7 +99,11 @@ const QuickLinks = (): ReactElement => {
                   flexDirection="column"
                   m={1}
                   borderRadius="borderRadius100"
-                  onClick={() => (window.location.href = item.href)}
+                  onClick={() =>
+                    item.external
+                      ? (window.location.href = item.href)
+                      : navigateTo(item.href)
+                  }
                 >
                   <Image
                     width={75}
@@ -95,10 +111,10 @@ const QuickLinks = (): ReactElement => {
                     src={item.iconImage}
                     alt="Sage won best company culture and best company work-life balance awards in 2021"
                   />
-                  <Typography color="white" variant="h4" mt={2}>
+                  <Typography color="white" variant="h3" fontSize="24px" mt={2}>
                     {item.title}
                   </Typography>
-                  <Typography color="white" variant="p">
+                  <Typography color="white" fontSize="24px" variant="p">
                     {item.subtitle}
                   </Typography>
                 </Box>

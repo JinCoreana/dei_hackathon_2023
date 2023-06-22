@@ -28,4 +28,6 @@ export type Stages = {
   order: number;
   title: string;
   description: string;
+  linkText?: string;
+  href?: string;
 };

@@ -11,7 +11,7 @@ const HomePage = (): ReactElement => {
   return (
     <>
       <NavigationBar />
-      <GridContainer>
+      <GridContainer p={0}>
         <ProgressTracker />
         <QuickLinks />
         <VideoCarousel />

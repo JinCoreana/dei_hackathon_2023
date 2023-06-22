@@ -6,8 +6,6 @@ import AdjustmentRequestOptions from "./components/AdjustmentRequestOptions";
 import ChatWithUs from "./components/ChatWithUs";
 
 const AdjustmentRequestPage = (): ReactElement => {
-  const [isChatBotOpen, setIsChatBotOpen] = useState(false);
-
   return (
     <>
       <NavigationBar isNotHomePage />
