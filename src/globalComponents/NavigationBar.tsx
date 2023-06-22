@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import AlertLogo from "../assets/images/alert.png";
 import SageLogo from "../assets/images/SageLogo.png";
 import Alert from "carbon-react/lib/components/alert";
+import { GridItem } from "carbon-react/lib/components/grid";
 
 interface NavigationBarProps {
   isNotHomePage?: boolean;
@@ -34,7 +35,7 @@ const NavigationBar = ({ isNotHomePage }: NavigationBarProps): ReactElement => {
   const navigateTo = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <>
+    <GridItem alignSelf="stretch" justifySelf="stretch">
       <Box
         width="100%"
         height={90}
@@ -44,7 +45,6 @@ const NavigationBar = ({ isNotHomePage }: NavigationBarProps): ReactElement => {
       >
         <Box display="flex" justifyContent="center" alignItems="center" ml={30}>
           <Image src={SageLogo} alt="Sage Icon" width="100" height="56" />
-  
         </Box>
         <Box
           flex={1}
@@ -106,7 +106,7 @@ const NavigationBar = ({ isNotHomePage }: NavigationBarProps): ReactElement => {
           </Menu>
         </Box>
       )}
-    </>
+    </GridItem>
   );
 };
 export default NavigationBar;

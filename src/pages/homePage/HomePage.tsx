@@ -6,17 +6,20 @@ import QuickLinks from "./components/QuickLinks";
 import NavigationBar from "../../globalComponents/NavigationBar";
 import VideoCarousel from "./components/VideoCarousel/VideoCarousel";
 import ProgressTracker from "./components/ProgressTracker/ProgressTracker";
+import { GlobalContextProvider } from "../../context/GlobalContext";
 
 const HomePage = (): ReactElement => {
   return (
     <>
-      <NavigationBar />
-      <GridContainer p={0}>
-        <ProgressTracker />
-        <QuickLinks />
-        <VideoCarousel />
-        <AwardsAndRecognition />
-      </GridContainer>
+      <GlobalContextProvider>
+        <GridContainer p={0}>
+          <NavigationBar />
+          <ProgressTracker />
+          <QuickLinks />
+          <VideoCarousel />
+          <AwardsAndRecognition />
+        </GridContainer>
+      </GlobalContextProvider>
     </>
   );
 };

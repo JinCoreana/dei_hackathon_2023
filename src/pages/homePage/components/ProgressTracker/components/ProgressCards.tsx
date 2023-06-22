@@ -3,7 +3,6 @@ import { STAGES } from "../constants/Stages";
 import { ReactElement, useEffect, useState } from "react";
 import { Stages, Vacancy } from "../ProgressTracker.types";
 import Typography from "carbon-react/lib/components/typography/typography.component";
-import Link from "carbon-react/lib/components/link";
 import { borderWidth200 } from "@sage/design-tokens/js/base/common";
 
 interface ProgressCardProps {
@@ -85,40 +84,42 @@ const ProgressCards = ({
             );
           })}
         </Box>
-        {selectedStage ? (
-          <Box
-            width="800px"
-            height="100px"
-            mt={50}
-            ml={100}
-            style={{ whiteSpace: "pre-line" }}
-          >
-            <Typography variant="h3" fontSize="36px" mb={3}>
-              {selectedStage}
-            </Typography>
 
-            {STAGES.filter((stage) => stage.title === selectedStage).map(
-              (stage) => (
-                <>
-                  <Typography fontSize="24px" lineHeight="30px" style={{}}>
-                    {stage.description}
-                  </Typography>
-                  <Typography
-                    fontSize="24px"
-                    style={{ color: "green", textDecoration: "underline" }}
-                  >
-                    {stage.linkText}
-                  </Typography>
-                </>
-              )
-            )}
-          </Box>
-        ) : (
-          <Typography fontSize="24px" mt={50}>
-            Select an application to find out more about the stages for that
-            application.
-          </Typography>
-        )}
+        <Box
+          width="70vw"
+          height="100px"
+          mt={100}
+          ml={100}
+          style={{ whiteSpace: "pre-line" }}
+        >
+          {selectedStage ? (
+            <>
+              <Typography variant="h3" fontSize="36px" mb={3}>
+                {selectedStage}
+              </Typography>
+              {STAGES.filter((stage) => stage.title === selectedStage).map(
+                (stage) => (
+                  <>
+                    <Typography fontSize="24px" lineHeight="30px" style={{}}>
+                      {stage.description}
+                    </Typography>
+                    <Typography
+                      fontSize="24px"
+                      style={{ color: "green", textDecoration: "underline" }}
+                    >
+                      {stage.linkText}
+                    </Typography>
+                  </>
+                )
+              )}
+            </>
+          ) : (
+            <Typography fontSize="24px" mt={50}>
+              Select an application to find out more about the stages for that
+              application.
+            </Typography>
+          )}
+        </Box>
       </Box>
     </>
   );

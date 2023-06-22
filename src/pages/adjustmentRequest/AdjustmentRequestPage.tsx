@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ReactElement } from "react";
 import NavigationBar from "../../globalComponents/NavigationBar";
 import { GridContainer } from "carbon-react/lib/components/grid";

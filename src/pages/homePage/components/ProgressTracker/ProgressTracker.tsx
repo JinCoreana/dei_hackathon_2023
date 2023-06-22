@@ -3,16 +3,17 @@ import { GridItem } from "carbon-react/lib/components/grid";
 import Typography from "carbon-react/lib/components/typography/typography.component";
 import Image from "carbon-react/lib/components/image";
 import { Select, Option } from "carbon-react/lib/components/select";
-import { ReactElement, useState } from "react";
+import { ReactElement, useContext } from "react";
 import ApplicantData from "../../../../mock/GETOneApplicant.json";
 import ProgressCard from "./components/ProgressCards";
 import { Vacancy } from "./ProgressTracker.types";
 import StageArrowBackground from "../../../../assets/images/stageArrowBackground.png";
 import SectionTitle from "../../../../globalComponents/SectionTitle";
+import { GlobalContext } from "../../../../context/GlobalContext";
 
 const ProgressTracker = (): ReactElement => {
-  const [selectedApplication, setSelectedApplication] =
-    useState("Please Select");
+  const { chosenApplication, setChosenApplication } = useContext(GlobalContext);
+
   return (
     <GridItem alignSelf="stretch" justifySelf="stretch">
       <SectionTitle title="Your Sage application journey" mt={50} />
@@ -22,15 +23,17 @@ const ProgressTracker = (): ReactElement => {
         </Typography>
 
         {ApplicantData.vacancies.length === 1 ? (
-          <Typography variant="h1">{selectedApplication}</Typography>
+          <Typography variant="h1">{chosenApplication}</Typography>
         ) : (
-          <Box width="400px">
+          <Box width="500px">
             <Select
               size="large"
               ml="20px"
+              mr="50px"
+              maxWidth="400px"
               placeholder="Select application"
-              value={selectedApplication}
-              onChange={(e) => setSelectedApplication(e.target.value)}
+              value={chosenApplication}
+              onChange={(e) => setChosenApplication(e.target.value)}
             >
               {ApplicantData.vacancies.map((vacancy: Vacancy) => {
                 return (
@@ -48,27 +51,17 @@ const ProgressTracker = (): ReactElement => {
       <Typography variant="p" fontSize="24px" ml={100} mt={50}>
         Select each stage below to find out more information.
       </Typography>
-      <Box
-        display="flex"
-        width="100%"
-        justifyContent="center"
-        alignItems="center"
-      >
+      <Box display="flex" justifyContent="center" alignItems="center">
         <Image
           backgroundImage={`url(${StageArrowBackground})`}
-          backgroundSize="80%"
+          backgroundSize="contain"
           minHeight={600}
         >
-          <Box
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            mt={180}
-          >
+          <Box display="flex" mt={200}>
             <ProgressCard
               selectedVacancy={
                 ApplicantData.vacancies.filter(
-                  (vacancy) => vacancy.job_title === selectedApplication
+                  (vacancy) => vacancy.job_title === chosenApplication
                 )[0] || ""
               }
             />

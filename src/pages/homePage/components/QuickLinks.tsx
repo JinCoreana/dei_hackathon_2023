@@ -1,6 +1,6 @@
 import Box from "carbon-react/lib/components/box/box.component";
 import Typography from "carbon-react/lib/components/typography/typography.component";
-import { ReactElement } from "react";
+import { ReactElement, useContext } from "react";
 import Image from "carbon-react/lib/components/image";
 import { GridItem } from "carbon-react/lib/components/grid";
 import firstIcon from "../../../assets/images/MicrosoftTeams-image (18) 2.png";
@@ -11,7 +11,9 @@ import secondIcon from "../../../assets/images/MicrosoftTeams-image (19) 2.png";
 import thirdIcon from "../../../assets/images/image 20.png";
 import SectionTitle from "../../../globalComponents/SectionTitle";
 import { useNavigate } from "react-router-dom";
-const QuickLinks = (): ReactElement => {
+import { GlobalContext } from "../../../context/GlobalContext";
+const QuickLinks = (): ReactElement | null => {
+  const { chosenApplication } = useContext(GlobalContext);
   const navigateTo = useNavigate();
   const quicklinkGrid = [
     {
@@ -64,10 +66,11 @@ const QuickLinks = (): ReactElement => {
     },
   ];
 
+  if (!chosenApplication) return null;
   return (
     <>
       <GridItem alignSelf="stretch" justifySelf="stretch" gridColumn="1/13">
-        <SectionTitle title="Quick links:" mt={100} />
+        <SectionTitle title="Quick links" mt={150} />
         <Typography
           variant="h4"
           fontSize="24px"
@@ -81,6 +84,7 @@ const QuickLinks = (): ReactElement => {
         </Typography>
 
         <Box
+          m="0 100px 0 100px"
           display="flex"
           justifyContent="center"
           alignItems="center"
@@ -90,6 +94,8 @@ const QuickLinks = (): ReactElement => {
             return (
               <>
                 <Box
+                  flexBasis="30%"
+                  p={20}
                   width={461}
                   height={221}
                   bg={item.bgColor}

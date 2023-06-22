@@ -8,12 +8,7 @@ export type ApplicantData = {
     source: string;
     address: string;
   };
-  vacancies: {
-    job_title: string;
-    status: string;
-    attachment: string;
-    summary: string;
-  }[];
+  vacancies: Vacancy[];
   send_thank_you_email: string;
 };
 
