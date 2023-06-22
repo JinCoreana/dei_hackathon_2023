@@ -1,0 +1,20 @@
+{
+    "data": {
+        "id": 1,
+        "full_name": "Bona Chow",
+        "first_name": "Bona",
+        "last_name": "Chow",
+        "email": "fakeemail@gmail.com",
+        "address": "54 Long Street, Anytown, XP9 8JQ",
+        "summary": None,
+        "phone_number": "07777888999",
+        "source": "referral",
+        "created_at": "2020-09-27T11:05:03Z",
+        "disqualified_date": "2020-10-28",
+        "hired_date": None,
+        "stage": {},
+        "position_id": 1,
+        "added_by": {},
+        "referrer": {}
+    }
+}

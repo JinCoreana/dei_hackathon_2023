@@ -1,0 +1,20 @@
+{
+    "data": {
+        "id": 3,
+        "full_name": "John Smith",
+        "first_name": "John",
+        "last_name": "Smith",
+        "email": "johnsmith@example.com",
+        "address": "123 Main Street, Anytown, USA",
+        "summary": None,
+        "phone_number": "(555) 123-4567",
+        "source": "referral",
+        "created_at": "2020-11-20T13:51:13Z",
+        "disqualified_date": "2020-11-29",
+        "hired_date": None,
+        "stage": {},
+        "position_id": 1,
+        "added_by": {},
+        "referrer": {}
+    }
+}
