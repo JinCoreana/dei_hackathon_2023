@@ -2,11 +2,10 @@ import React from "react";
 import { ReactElement } from "react";
 import { GridContainer } from "carbon-react/lib/components/grid";
 import AwardsAndRecognition from "./components/AwardsAndRecognition";
-
 import QuickLinks from "./components/QuickLinks";
-import ProgressTracker from "./components/ProgressTracker";
 import NavigationBar from "../../globalComponents/NavigationBar";
-// import VideoCarousel from "./components/VideoCarousel/VideoCarousel";
+import VideoCarousel from "./components/VideoCarousel/VideoCarousel";
+import ProgressTracker from "./components/ProgressTracker/ProgressTracker";
 
 const HomePage = (): ReactElement => {
   return (
@@ -15,7 +14,7 @@ const HomePage = (): ReactElement => {
       <GridContainer>
         <ProgressTracker />
         <QuickLinks />
-        {/* <VideoCarousel /> */}
+        <VideoCarousel />
         <AwardsAndRecognition />
       </GridContainer>
     </>

@@ -6,8 +6,8 @@ import Image from "carbon-react/lib/components/image";
 import Icon from "carbon-react/lib/components/icon";
 import { ReactElement, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import AlertLogo from "../assets/img/alert.png";
-import SageLogo from "../assets/img/SageLogo.png";
+import AlertLogo from "../assets/images/alert.png";
+import SageLogo from "../assets/images/SageLogo.png";
 import Alert from "carbon-react/lib/components/alert";
 
 interface NavigationBarProps {
@@ -44,6 +44,7 @@ const NavigationBar = ({ isNotHomePage }: NavigationBarProps): ReactElement => {
       >
         <Box display="flex" justifyContent="center" alignItems="center" ml={30}>
           <Image src={SageLogo} alt="Sage Icon" width="100" height="56" />
+  
         </Box>
         <Box
           flex={1}

@@ -1,7 +1,7 @@
 // POST - Create applicant 
 // TA https://developer.sage.com/internal/hr/reference/api-ref/#tag/Recruitment/paths/~1recruitment~1positions~1%7Bid%7D~1applicants/post 
-// input parameters : position_id (job id)
-// Input body data
+//input parameters : position_id (job id)
+//Input body data
 {
     "applicant[first_name]":"John",
     "send_thank_you_email":"true",

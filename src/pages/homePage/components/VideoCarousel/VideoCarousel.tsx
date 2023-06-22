@@ -1,4 +1,3 @@
-import Box from "carbon-react/lib/components/box/box.component";
 import { GridItem } from "carbon-react/lib/components/grid";
 import { ReactElement } from "react";
 import { Carousel } from "carbon-react/lib/components/carousel";
@@ -14,7 +13,7 @@ const VideoCarousel = (): ReactElement => {
       align-items="center"
       justify-items="center"
     >
-      <SectionTitle title="Success Stories" />
+      <SectionTitle title="Success Stories" mt={100}/>
       <Carousel enableSlideSelector={false}>
         {videosForCarousel.map((video) => {
           return <VideoCard url={video.url} title={video.title} />;

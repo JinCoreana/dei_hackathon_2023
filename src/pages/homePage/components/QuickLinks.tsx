@@ -1,16 +1,14 @@
 import Box from "carbon-react/lib/components/box/box.component";
-import Button from "carbon-react/lib/components/button/button.component";
 import Typography from "carbon-react/lib/components/typography/typography.component";
 import { ReactElement } from "react";
-import { useNavigate } from "react-router-dom";
 import Image from "carbon-react/lib/components/image";
-import { GridContainer, GridItem } from "carbon-react/lib/components/grid";
-import firstIcon from "../../../images/assests/MicrosoftTeams-image (18) 2.png";
-import fivthIcon from "../../../images/assests/MicrosoftTeams-image (15) 2.png";
-import sixthIcon from "../../../images/assests/MicrosoftTeams-image (16) 3.png";
-import fourthIcon from "../../../images/assests/MicrosoftTeams-image (17) 2.png";
-import secondIcon from "../../../images/assests/MicrosoftTeams-image (19) 2.png";
-import thirdIcon from "../../../images/assests/image 20.png";
+import { GridItem } from "carbon-react/lib/components/grid";
+import firstIcon from "../../../assets/images/MicrosoftTeams-image (18) 2.png";
+import fivthIcon from "../../../assets/images/MicrosoftTeams-image (15) 2.png";
+import sixthIcon from "../../../assets/images/MicrosoftTeams-image (16) 3.png";
+import fourthIcon from "../../../assets/images/MicrosoftTeams-image (17) 2.png";
+import secondIcon from "../../../assets/images/MicrosoftTeams-image (19) 2.png";
+import thirdIcon from "../../../assets/images/image 20.png";
 import SectionTitle from "../../../globalComponents/SectionTitle";
 const QuickLinks = (): ReactElement => {
   const quicklinkGrid = [
@@ -62,7 +60,7 @@ const QuickLinks = (): ReactElement => {
   return (
     <>
       <GridItem alignSelf="stretch" justifySelf="stretch" gridColumn="1/13">
-        <SectionTitle title="Quick links:" />
+        <SectionTitle title="Quick links:" mt={100} />
         <Typography color="black" variant="h4" fontSize="24px" ml={100} mb={50}>
           Building a great career is something that's important to all of us and
           we want you to reach your career goals right here at Sage.
@@ -95,7 +93,7 @@ const QuickLinks = (): ReactElement => {
                     width={75}
                     height={75}
                     src={item.iconImage}
-                    alt="Sage won best compnay culture and best compnay work-life balance awards in 2021"
+                    alt="Sage won best company culture and best company work-life balance awards in 2021"
                   />
                   <Typography color="white" variant="h4" mt={2}>
                     {item.title}

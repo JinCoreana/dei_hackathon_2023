@@ -2,9 +2,9 @@ import Box from "carbon-react/lib/components/box/box.component";
 import { GridItem } from "carbon-react/lib/components/grid";
 import { ReactElement } from "react";
 import Image from "carbon-react/lib/components/image";
-import LeftAwards from "../../../images/assets/leftAwards.png";
-import RightAwards from "../../../images/assets/rightAwards.png";
-import CentreRecognition from "../../../images/assets/centreRecongnition.png";
+import LeftAwards from "../../../assets/images/leftAwards.png";
+import RightAwards from "../../../assets/images/rightAwards.png";
+import CentreRecognition from "../../../assets/images/centreRecongnition.png";
 
 const AwardsAndRecognition = (): ReactElement => {
   return (
@@ -21,7 +21,7 @@ const AwardsAndRecognition = (): ReactElement => {
             width={400}
             height="100%"
             src={LeftAwards}
-            alt="Sage won best compnay culture and best compnay work-life balance awards in 2021"
+            alt="Sage won best company culture and best company work-life balance awards in 2021"
           />
 
           <Image
@@ -35,7 +35,7 @@ const AwardsAndRecognition = (): ReactElement => {
             width={400}
             height="100%"
             src={RightAwards}
-            alt="Sage won best company for diversity and best compnay for women in 2021"
+            alt="Sage won best company for diversity and best company for women in 2021"
           />
         </Box>
       </GridItem>
