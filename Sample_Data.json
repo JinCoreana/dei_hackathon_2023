@@ -1,0 +1,53 @@
+// POST - Create applicant 
+// TA https://developer.sage.com/internal/hr/reference/api-ref/#tag/Recruitment/paths/~1recruitment~1positions~1%7Bid%7D~1applicants/post 
+// input parameters : position_id (job id)
+// Input body data
+{
+    "applicant[first_name]":"John",
+    "send_thank_you_email":"true",
+    "applicant[last_name]": "Doe",
+    "applicant[email]":"john.doe@email.com",
+    "applicant[referral]":"Mary doe",
+    "applicant[phone_number]":"012 345 6789",
+    "applicant[source]":"LinkedIn",
+    "applicant[address]":"123 Street Avenue, City, Country",
+    "applicant[summary]":"Lorem ipsum",
+    "applicant[attachment]":"my_cv.pdf"
+
+
+}
+
+
+// GET - Retrieve Candidate current application status (sorted newest to oldest) 
+// input parameter: applicant_id 
+// (Talent Aquisition side API: https://developer.sage.com/internal/hr/reference/api-ref/#tag/Recruitment/paths/~1recruitment~1applicants~1%7Bid%7D~1actions/get)
+
+{    
+"data": [
+        {
+            "action": "moved_to_final_hiring_stage",
+            "message": "Hiring Stage: Congratulations, Your Contract of employment is being processed",
+            "created_at": "2020-11-01T10:05:45Z"
+        },
+        {
+            "action": "moved_between_stages",
+            "message": "Stage 3: You have been shortlisted and will be invited to an interview soon, please remember to request any adjustment requests if any are required",
+            "created_at": "2020-10-28T09:05:45Z"
+        },
+        {
+            "action": "moved_between_stages",
+            "message": "Stage 2: Getting to know you. Our Talent Acquisition Partner will be going over the documentation you shared. If your profile fits, we will reach out with the next steps.",
+            "created_at": "2020-10-27T10:59:23Z"
+        },
+        {
+            "action": "moved_between_stages",
+            "message": "Stage 1: Awaiting documentation upload (CV/academic records/certificate etc)",
+            "created_at": "2020-10-15T11:01:39Z"
+        },
+        {
+            "action": "initial_stage",
+            "message": "Application: Thank you, Your application has been acknowledged.",
+            "created_at": "2020-10-14T11:01:39Z"
+        }
+    ]
+}
