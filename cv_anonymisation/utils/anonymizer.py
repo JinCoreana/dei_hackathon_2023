@@ -1,63 +1,40 @@
-import PyPDF2
+import pdfplumber
 import re
-import requests
 import json
 import typing
-from pprint import pprint
 
 
-# Read PDF file
 def extract_text(filepath: str) -> str:
-    reader = PyPDF2.PdfReader(filepath)
-
+    # Open the file and create a pdf object.
+    pdf = pdfplumber.open(filepath)
     all_text = ""
-
-    # Extract text from the PDF file
-    for page in reader.pages:
-        page_text = page.extract_text()
-        all_text += page_text + " "
-
+    # Iterate over each page and extract the text of each page.
+    for number, pageText in enumerate(pdf.pages):
+        all_text += "\n" + pageText.extract_text()
     return all_text
 
 
-def _get_personal_data(id: int) -> dict:
-    response = requests.get(f"https://subdomain.sage.hr/api/recruitment/applicants/{id}")
-    return json.loads(response.read()) # type: ignore
+def _get_personal_data(candidate_id: int) -> dict:
+    # Mocking the response from https://subdomain.sage.hr/api/recruitment/applicants/{candidate_id}
+    mock_response_filename = f"../resources/example_data{candidate_id}.json"
+    with open(mock_response_filename, "r") as read_file:
+        personal_data = read_file.read()
+    return json.loads(personal_data)
 
 
 def _get_keywords(personal_data) -> typing.List[str]:
     keyword_list = []
     for field, field_value in personal_data["data"].items():
-        if " " in str(field_value):
-            keyword_list += field_value.split()
-        elif field_value is not None and field_value != {}:
-            keyword_list.append(field_value)
+        if field in ["full_name", "first_name", "last_name", "email", "address", "phone_number"]:
+            if " " in str(field_value):
+                keyword_list += field_value.split()
+            elif field_value is not None and field_value != {}:
+                keyword_list.append(field_value)
     return keyword_list
 
 
-def final_filter(id: int, text: str) -> str:
-    # personal_data = _get_personal_data(id)
-    personal_data = {
-        "data": {
-            "id": 3,
-            "full_name": "Bona Chow",
-            "first_name": "Bona",
-            "last_name": "Chow",
-            "email": "bonachowfakeemail@gmail.com",
-            "address": "54 Long Street, Anytown, XP9 8JQ",
-            "summary": None,
-            "phone_number": "07777888999",
-            "source": "referral",
-            "created_at": "2020-10-21T12:58:43Z",
-            "disqualified_date": "2020-10-28",
-            "hired_date": None,
-            "stage": {},
-            "position_id": 1,
-            "added_by": {},
-            "referrer": {}
-        }
-    }
-
+def final_filter(candidate_id: int, text: str) -> str:
+    personal_data = _get_personal_data(candidate_id)
     keyword_list = _get_keywords(personal_data)
     for keyword in keyword_list:
         text = re.sub(str(keyword), "*****", text, flags=re.IGNORECASE)
@@ -65,10 +42,6 @@ def final_filter(id: int, text: str) -> str:
 
 
 def anonymize(filename):
-    #filename = 'example_cv.pdf'
     text = extract_text(filename)
-
-    return final_filter(id=3, text=text)
-
-
-
+    mock_candidate_id = filename.split('.pdf')[-2][-1]  # Get mock candidate id from filename
+    return final_filter(candidate_id=mock_candidate_id, text=text)
