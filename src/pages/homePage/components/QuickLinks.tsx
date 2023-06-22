@@ -11,6 +11,7 @@ import sixthIcon from '../../../images/assests/MicrosoftTeams-image (16) 3.png'
 import fourthIcon from '../../../images/assests/MicrosoftTeams-image (17) 2.png'
 import secondIcon from '../../../images/assests/MicrosoftTeams-image (19) 2.png'
 import thirdIcon from '../../../images/assests/image 20.png'
+import SectionTitle from "../../../globalComponents/SectionTitle";
 const QuickLinks = (): ReactElement => {
   
 
@@ -61,6 +62,12 @@ const QuickLinks = (): ReactElement => {
 
     <GridItem alignSelf="stretch" justifySelf="stretch" gridColumn="1/13"
     >
+    <SectionTitle title="Quick links:" />
+    <Typography color="black" variant="h4" fontSize="24px" ml={100} mb={50}>
+      Building a great career is something that's important to all of us and we want you to reach your career goals right here at Sage.
+      <br></br>Use the links below to help you with your application journey.
+    </Typography>
+    
       <Box
       display="flex"
       justifyContent="center"
