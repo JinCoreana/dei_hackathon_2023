@@ -1,7 +1,7 @@
 {
   "name": "dei_hackathon",
   "version": "0.1.0",
-  "homepage": "https://jincoreana.github.io/dei",
+  "homepage": "https://jincoreana.github.io/dei_hackathon_2023/",
   "private": true,
   "dependencies": {
     "@sage/design-tokens": "^4.19.0",
@@ -38,13 +38,12 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.1.5",
     "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/user-event": "^14.4.3",
     "@types/react-dom": "^17.0.11",
-    "gh-pages": "^5.0.0",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
+    "gh-pages": "^5.0.0"
   }
 }
