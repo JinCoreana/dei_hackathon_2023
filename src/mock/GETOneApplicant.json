@@ -1,0 +1,32 @@
+{
+  "applicant": {
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john.doe@email.com",
+    "referral": "Mary doe",
+    "phone_number": "012 345 6789",
+    "source": "LinkedIn",
+    "address": "123 Street Avenue, City, Country"
+  },
+  "vacancies": [
+    {
+      "job_title": "Associate Software Engineer",
+      "status": "Stage 1",
+      "attachment": "my_cv.pdf",
+      "summary": "Lorem ipsum"
+    },
+    {
+      "job_title": "Graduate Developer",
+      "status": "Stage 3",
+      "attachment": "my_cv.pdf",
+      "summary": "Lorem ipsum"
+    },
+    {
+      "job_title": "Graduate ML Engineer",
+      "status": "Stage 2",
+      "attachment": "my_cv.pdf",
+      "summary": "Lorem ipsum"
+    }
+  ],
+  "send_thank_you_email": "true"
+}

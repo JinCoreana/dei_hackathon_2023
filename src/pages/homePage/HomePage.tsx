@@ -2,22 +2,24 @@ import React from "react";
 import { ReactElement } from "react";
 import { GridContainer } from "carbon-react/lib/components/grid";
 import AwardsAndRecognition from "./components/AwardsAndRecognition";
-
 import QuickLinks from "./components/QuickLinks";
-import ProgressTracker from "./components/ProgressTracker";
 import NavigationBar from "../../globalComponents/NavigationBar";
-// import VideoCarousel from "./components/VideoCarousel/VideoCarousel";
+import VideoCarousel from "./components/VideoCarousel/VideoCarousel";
+import ProgressTracker from "./components/ProgressTracker/ProgressTracker";
+import { GlobalContextProvider } from "../../context/GlobalContext";
 
 const HomePage = (): ReactElement => {
   return (
     <>
-      <NavigationBar />
-      <GridContainer>
-        <ProgressTracker />
-        <QuickLinks />
-        {/* <VideoCarousel /> */}
-        <AwardsAndRecognition />
-      </GridContainer>
+      <GlobalContextProvider>
+        <GridContainer p={0}>
+          <NavigationBar />
+          <ProgressTracker />
+          <QuickLinks />
+          <VideoCarousel />
+          <AwardsAndRecognition />
+        </GridContainer>
+      </GlobalContextProvider>
     </>
   );
 };
