@@ -3,22 +3,13 @@ import Button from "carbon-react/lib/components/button/button.component";
 import Typography from "carbon-react/lib/components/typography/typography.component";
 import { Menu, MenuItem } from "carbon-react/lib/components/menu";
 import Image from "carbon-react/lib/components/image";
-import Icon from "carbon-react/lib/components/icon";
 import { ReactElement, useState } from "react";
 import { useNavigate } from "react-router-dom";
-<<<<<<< HEAD
 import AlertLogo from "../assets/images/alert.png";
 import SageLogo from "../assets/images/SageLogo.png";
-=======
-import AlertLogo from "../images/assets/alert.png";
-import SageLogo from "../images/assets/SageLogo.png";
->>>>>>> e09703e (Added flexBasis + made improvement to folder structure.(all the images are moved under image/assets))
 import Alert from "carbon-react/lib/components/alert";
-<<<<<<< HEAD
 import { GridItem } from "carbon-react/lib/components/grid";
-=======
-import HomePageIcon from "../images/assets/image 34.png";
->>>>>>> e10ad8a (Done the styling in adjustment Page)
+import HomePageIcon from "../assets/images/image 34.png";
 
 interface NavigationBarProps {
   isNotHomePage?: boolean;

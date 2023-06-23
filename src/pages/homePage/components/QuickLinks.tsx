@@ -50,18 +50,11 @@ const QuickLinks = (): ReactElement | null => {
     },
     {
       bgColor: "#00324C",
-<<<<<<< HEAD
       iconImage: fifthIcon,
       title: "Learn more about Sage",
       subtitle: "Go to the Sage careers page",
       external: true,
       href: "https://www.sage.com/en-gb/company/careers/career-search",
-=======
-      iconImage: fivthIcon,
-      title: "Find a Mentor/Buddy",
-      subtitle: "Get support from a Sage Colleagues to help you succeed",
-      href: "/",
->>>>>>> e09703e (Added flexBasis + made improvement to folder structure.(all the images are moved under image/assets))
     },
     {
       bgColor: "#007E45",

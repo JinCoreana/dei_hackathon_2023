@@ -1,22 +1,17 @@
 import Box from "carbon-react/lib/components/box/box.component";
-import Button from "carbon-react/lib/components/button/button.component";
 import Typography from "carbon-react/lib/components/typography/typography.component";
 import { ReactElement } from "react";
-import { useNavigate } from "react-router-dom";
 import Image from "carbon-react/lib/components/image";
-import { GridContainer, GridItem } from "carbon-react/lib/components/grid";
-import icon1 from "../../../images/assets/icon1.png";
-import icon2 from "../../../images/assets/icon2.png";
-import icon3 from "../../../images/assets/icon3.png";
-import icon4 from "../../../images/assets/icon4.png";
-import icon5 from "../../../images/assets/icon5.png";
-import icon6 from "../../../images/assets/icon6.png";
-import icon7 from "../../../images/assets/icon7.png";
-import icon8 from "../../../images/assets/icon8.png";
-<<<<<<< HEAD
-=======
-import icon9 from "../../../images/assets/Fill.png";
->>>>>>> e10ad8a (Done the styling in adjustment Page)
+import { GridItem } from "carbon-react/lib/components/grid";
+import icon1 from "../../../assets/images/icon1.png";
+import icon2 from "../../../assets/images/icon2.png";
+import icon3 from "../../../assets/images/icon3.png";
+import icon4 from "../../../assets/images/icon4.png";
+import icon5 from "../../../assets/images/icon5.png";
+import icon6 from "../../../assets/images/icon6.png";
+import icon7 from "../../../assets/images/icon7.png";
+import icon8 from "../../../assets/images/icon8.png";
+import icon9 from "../../../assets/images/Fill.png";
 import SectionTitle from "../../../globalComponents/SectionTitle";
 
 const AdjustmentRequestOptions = (): ReactElement => {
@@ -64,29 +59,6 @@ const AdjustmentRequestOptions = (): ReactElement => {
       href: "/",
     },
     {
-<<<<<<< HEAD
-      bgColor: "#00293F",
-      iconImage: icon5,
-      title: "Interview Format Flexibility",
-      href: "/",
-    },
-    {
-      bgColor: "#000000",
-      iconImage: icon6,
-      title: "Visual Supports",
-      href: "/",
-    },
-    {
-      bgColor: "#00A65C",
-      iconImage: icon7,
-      title: "Additional Breaks",
-      href: "/",
-    },
-    {
-      bgColor: "#00293F",
-      iconImage: icon8,
-      title: "Clear Communication\t(Direct Language)",
-=======
       bgColor: "#00324C",
       iconImage: icon8,
       title: "Clear Communication\t(Direct Language)",
@@ -96,7 +68,6 @@ const AdjustmentRequestOptions = (): ReactElement => {
       bgColor: "#007E45",
       iconImage: icon9,
       title: "Other Adjustment",
->>>>>>> e10ad8a (Done the styling in adjustment Page)
       href: "/",
     },
   ];
@@ -104,9 +75,6 @@ const AdjustmentRequestOptions = (): ReactElement => {
   return (
     <>
       <GridItem alignSelf="stretch" justifySelf="stretch" gridColumn="1/13">
-<<<<<<< HEAD
-        <SectionTitle title="Your Adjustment Requests" />
-=======
         <Box ml={100} mb={50} mt={5}>
           <Typography color="black" fontSize="36px" fontWeight="900">
             Request an adjustment
@@ -126,7 +94,6 @@ const AdjustmentRequestOptions = (): ReactElement => {
           </Typography>
         </Box>
         <SectionTitle title="Interview adjustments" />
->>>>>>> e10ad8a (Done the styling in adjustment Page)
         <Box
           display="flex"
           justifyContent="center"
@@ -160,16 +127,12 @@ const AdjustmentRequestOptions = (): ReactElement => {
                       width={120}
                       height={120}
                       src={item.iconImage}
-                      alt="Sage won best compnay culture and best compnay work-life balance awards in 2021"
+                      alt="Sage won best company culture and best company work-life balance awards in 2021"
                     />
                   </Box>
                   <Typography color="black" variant="h1" mt={1}>
                     {item.title}
-<<<<<<< HEAD
                   </Typography>
-=======
-                  </Typography>{" "}
->>>>>>> e10ad8a (Done the styling in adjustment Page)
                 </Box>
               </>
             );

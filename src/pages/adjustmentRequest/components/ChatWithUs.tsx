@@ -5,7 +5,7 @@ import Typography from "carbon-react/lib/components/typography/typography.compon
 import { ReactElement, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Image from "carbon-react/lib/components/image";
-import chatIcon from "../../../images/assets/MicrosoftTeams-image (16) 3.png";
+import chatIcon from "../../../assets/images/MicrosoftTeams-image (16) 3.png";
 const ChatWithUs = (): ReactElement => {
   const navigateTo = useNavigate();
 
