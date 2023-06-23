@@ -12,6 +12,7 @@ const VideoCard = ({ url, title }: VideoCardProps) => {
     <Box mr={130} ml={-100}>
       <iframe
         className="videoFrame"
+        title="successVideo"
         frameBorder={0}
         height={300}
         width={500}

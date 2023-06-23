@@ -3,12 +3,12 @@ import Typography from "carbon-react/lib/components/typography/typography.compon
 import { ReactElement, useContext } from "react";
 import Image from "carbon-react/lib/components/image";
 import { GridItem } from "carbon-react/lib/components/grid";
-import firstIcon from "../../../assets/images/MicrosoftTeams-image (18) 2.png";
+import firstIcon from "../../../assets/images/note.png";
 import fifthIcon from "../../../assets/images/more.png";
-import sixthIcon from "../../../assets/images/MicrosoftTeams-image (16) 3.png";
-import fourthIcon from "../../../assets/images/MicrosoftTeams-image (17) 2.png";
-import secondIcon from "../../../assets/images/MicrosoftTeams-image (19) 2.png";
-import thirdIcon from "../../../assets/images/image 20.png";
+import sixthIcon from "../../../assets/images/chat.png";
+import fourthIcon from "../../../assets/images/adjust.png";
+import secondIcon from "../../../assets/images/question.png";
+import thirdIcon from "../../../assets/images/check.png";
 import SectionTitle from "../../../globalComponents/SectionTitle";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../../context/GlobalContext";

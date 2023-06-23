@@ -29,7 +29,7 @@ export const STAGES: Stages[] = [
   },
   {
     order: 4,
-    title: "Hiring Stage",
+    title: "Hiring stage",
     description:
       "Congratulations! Your interview was successful.\nWe’re processing your contract of employment, and we’ll be in touch soon.",
   },

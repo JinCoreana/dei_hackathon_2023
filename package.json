@@ -1,7 +1,7 @@
 {
   "name": "dei_hackathon",
   "version": "0.1.0",
-  "homepage": "https://jincoreana.github.io/dei_hackathon_2023",
+  "homepage": "https://jincoreana.github.io/dei",
   "private": true,
   "dependencies": {
     "@sage/design-tokens": "^4.19.0",
