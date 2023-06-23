@@ -142,6 +142,7 @@ const AdjustmentRequestOptions = (): ReactElement => {
                   alignItems="center"
                   flexDirection="column"
                   mb={5}
+                  flexBasis="30%"
                 >
                   <Box
                     width={461}

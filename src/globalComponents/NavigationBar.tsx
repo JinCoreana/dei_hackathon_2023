@@ -6,8 +6,13 @@ import Image from "carbon-react/lib/components/image";
 import Icon from "carbon-react/lib/components/icon";
 import { ReactElement, useState } from "react";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
 import AlertLogo from "../assets/images/alert.png";
 import SageLogo from "../assets/images/SageLogo.png";
+=======
+import AlertLogo from "../images/assets/alert.png";
+import SageLogo from "../images/assets/SageLogo.png";
+>>>>>>> e09703e (Added flexBasis + made improvement to folder structure.(all the images are moved under image/assets))
 import Alert from "carbon-react/lib/components/alert";
 <<<<<<< HEAD
 import { GridItem } from "carbon-react/lib/components/grid";

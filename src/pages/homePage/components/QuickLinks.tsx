@@ -2,6 +2,7 @@ import Box from "carbon-react/lib/components/box/box.component";
 import Typography from "carbon-react/lib/components/typography/typography.component";
 import { ReactElement, useContext } from "react";
 import Image from "carbon-react/lib/components/image";
+<<<<<<< HEAD
 import { GridItem } from "carbon-react/lib/components/grid";
 import firstIcon from "../../../assets/images/MicrosoftTeams-image (18) 2.png";
 import fifthIcon from "../../../assets/images/more.png";
@@ -9,6 +10,15 @@ import sixthIcon from "../../../assets/images/MicrosoftTeams-image (16) 3.png";
 import fourthIcon from "../../../assets/images/MicrosoftTeams-image (17) 2.png";
 import secondIcon from "../../../assets/images/MicrosoftTeams-image (19) 2.png";
 import thirdIcon from "../../../assets/images/image 20.png";
+=======
+import { GridContainer, GridItem } from "carbon-react/lib/components/grid";
+import firstIcon from "../../../images/assets/MicrosoftTeams-image (18) 2.png";
+import fivthIcon from "../../../images/assets/MicrosoftTeams-image (15) 2.png";
+import sixthIcon from "../../../images/assets/MicrosoftTeams-image (16) 3.png";
+import fourthIcon from "../../../images/assets/MicrosoftTeams-image (17) 2.png";
+import secondIcon from "../../../images/assets/MicrosoftTeams-image (19) 2.png";
+import thirdIcon from "../../../images/assets/image 20.png";
+>>>>>>> e09703e (Added flexBasis + made improvement to folder structure.(all the images are moved under image/assets))
 import SectionTitle from "../../../globalComponents/SectionTitle";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../../context/GlobalContext";
@@ -50,11 +60,18 @@ const QuickLinks = (): ReactElement | null => {
     },
     {
       bgColor: "#00324C",
+<<<<<<< HEAD
       iconImage: fifthIcon,
       title: "Learn more about Sage",
       subtitle: "Go to the Sage careers page",
       external: true,
       href: "https://www.sage.com/en-gb/company/careers/career-search",
+=======
+      iconImage: fivthIcon,
+      title: "Find a Mentor/Buddy",
+      subtitle: "Get support from a Sage Colleagues to help you succeed",
+      href: "/",
+>>>>>>> e09703e (Added flexBasis + made improvement to folder structure.(all the images are moved under image/assets))
     },
     {
       bgColor: "#007E45",
