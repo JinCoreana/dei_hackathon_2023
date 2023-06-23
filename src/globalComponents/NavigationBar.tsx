@@ -9,7 +9,11 @@ import { useNavigate } from "react-router-dom";
 import AlertLogo from "../assets/images/alert.png";
 import SageLogo from "../assets/images/SageLogo.png";
 import Alert from "carbon-react/lib/components/alert";
+<<<<<<< HEAD
 import { GridItem } from "carbon-react/lib/components/grid";
+=======
+import HomePageIcon from "../images/assets/image 34.png";
+>>>>>>> e10ad8a (Done the styling in adjustment Page)
 
 interface NavigationBarProps {
   isNotHomePage?: boolean;
@@ -96,8 +100,14 @@ const NavigationBar = ({ isNotHomePage }: NavigationBarProps): ReactElement => {
             navigateTo("/");
           }}
         >
-          <Menu menuType="light">
-            <Icon ml={20} mb={1} type="home" bgSize="extra-large" />
+          <Menu menuType="light" display="flex" alignItems="center">
+            <Image
+              src={HomePageIcon}
+              alt="Homepage Icon"
+              width="60"
+              height="60"
+              ml={6}
+            />
             <MenuItem>
               <Typography color="black" fontSize="24px" m={0} p={2}>
                 Back to Homepage
