@@ -13,7 +13,7 @@ ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
     <CarbonProvider theme={sageTheme} validationRedesignOptIn>
-      <Router>
+      <Router basename="/dei_hackathon_2023/">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route
