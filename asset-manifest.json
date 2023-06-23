@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/dei_hackathon_2023/static/css/main.f2fe4d2f.css",
+    "main.js": "/dei_hackathon_2023/static/js/main.618b3f08.js",
+    "static/media/leftAwards.png": "/dei_hackathon_2023/static/media/leftAwards.b9c56d8eaf48578d1897.png",
+    "static/media/rightAwards.png": "/dei_hackathon_2023/static/media/rightAwards.95546855eab1ef06ca77.png",
+    "static/media/centreRecongnition.png": "/dei_hackathon_2023/static/media/centreRecongnition.6d3300c6dd67158fb5a3.png",
+    "static/media/sageui-medium.ttf": "/dei_hackathon_2023/static/media/sageui-medium.bf4658b49a08e83c3248.ttf",
+    "static/media/sageui-bold.ttf": "/dei_hackathon_2023/static/media/sageui-bold.b15d79f91e7797166b5d.ttf",
+    "static/media/sageui-regular.ttf": "/dei_hackathon_2023/static/media/sageui-regular.0870ec74f655711b404e.ttf",
+    "static/media/sageui-bold.otf": "/dei_hackathon_2023/static/media/sageui-bold.63ebd4ba37f8e5a15487.otf",
+    "static/media/sageui-medium.otf": "/dei_hackathon_2023/static/media/sageui-medium.498d6ed6a70711499dd6.otf",
+    "static/media/sageui-regular.otf": "/dei_hackathon_2023/static/media/sageui-regular.9cd7172286556a725c83.otf",
+    "static/media/sageui-medium.woff": "/dei_hackathon_2023/static/media/sageui-medium.c1601ff9cb97d3c5de26.woff",
+    "static/media/sageui-bold.woff": "/dei_hackathon_2023/static/media/sageui-bold.080d224e5995790988eb.woff",
+    "static/media/sageui-regular.woff": "/dei_hackathon_2023/static/media/sageui-regular.762ecaf70017089de3cc.woff",
+    "static/media/sageui-medium.woff2": "/dei_hackathon_2023/static/media/sageui-medium.c39544a6b682564733f3.woff2",
+    "static/media/sageui-bold.woff2": "/dei_hackathon_2023/static/media/sageui-bold.3b697c649436ac60c89c.woff2",
+    "static/media/sageui-regular.woff2": "/dei_hackathon_2023/static/media/sageui-regular.521a81137fa52b534bf7.woff2",
+    "static/media/carbon-icons-webfont.woff": "/dei_hackathon_2023/static/media/carbon-icons-webfont.f6da3837597b061acfe7.woff",
+    "static/media/SageLogo.png": "/dei_hackathon_2023/static/media/SageLogo.15845df7fa44e18d1084.png",
+    "index.html": "/dei_hackathon_2023/index.html",
+    "main.f2fe4d2f.css.map": "/dei_hackathon_2023/static/css/main.f2fe4d2f.css.map",
+    "main.618b3f08.js.map": "/dei_hackathon_2023/static/js/main.618b3f08.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f2fe4d2f.css",
+    "static/js/main.618b3f08.js"
+  ]
+}
