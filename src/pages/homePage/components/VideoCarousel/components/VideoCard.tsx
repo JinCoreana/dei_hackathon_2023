@@ -1,5 +1,6 @@
 import Box from "carbon-react/lib/components/box/box.component";
 import Typography from "carbon-react/lib/components/typography/typography.component";
+import React from "react";
 
 export interface VideoCardProps {
   url: string;

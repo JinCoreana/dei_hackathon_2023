@@ -2,7 +2,7 @@ import Box from "carbon-react/lib/components/box/box.component";
 import Button from "carbon-react/lib/components/button/button.component";
 import { GridItem } from "carbon-react/lib/components/grid";
 import Typography from "carbon-react/lib/components/typography/typography.component";
-import { ReactElement, useState } from "react";
+import { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ChatWithUs = (): ReactElement => {
