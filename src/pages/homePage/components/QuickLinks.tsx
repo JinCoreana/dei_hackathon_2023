@@ -94,7 +94,6 @@ const QuickLinks = (): ReactElement | null => {
             return (
               <>
                 <Box
-                  flexBasis="30%"
                   p={20}
                   width={461}
                   height={221}
@@ -103,8 +102,10 @@ const QuickLinks = (): ReactElement | null => {
                   justifyContent="center"
                   alignItems="center"
                   flexDirection="column"
+                  flexBasis="28%"
                   m={1}
                   borderRadius="borderRadius100"
+                  style={{ cursor: "pointer" }}
                   onClick={() =>
                     item.external
                       ? (window.location.href = item.href)
@@ -120,7 +121,7 @@ const QuickLinks = (): ReactElement | null => {
                   <Typography color="white" variant="h3" fontSize="24px" mt={2}>
                     {item.title}
                   </Typography>
-                  <Typography color="white" fontSize="24px" variant="p">
+                  <Typography color="white" fontSize="20px" variant="p">
                     {item.subtitle}
                   </Typography>
                 </Box>

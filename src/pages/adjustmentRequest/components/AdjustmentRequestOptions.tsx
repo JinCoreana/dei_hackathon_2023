@@ -79,7 +79,7 @@ const AdjustmentRequestOptions = (): ReactElement => {
           <Typography color="black" fontSize="36px" fontWeight="900">
             Request an adjustment
           </Typography>
-          <Typography color="black" fontSize="28px" mt={4}>
+          <Typography color="black" fontSize="28px" mt={4} lineHeight="32px">
             Got an interview? We know this can be a stressful experience, and we
             want you to succeed. If it will help you be your best self, you can
             request an adjustment ahead of your interview.
@@ -120,6 +120,7 @@ const AdjustmentRequestOptions = (): ReactElement => {
                     alignItems="center"
                     flexDirection="column"
                     mx={1}
+                    style={{ cursor: "pointer" }}
                     borderRadius="borderRadius100"
                     onClick={() => (window.location.href = item.href)}
                   >

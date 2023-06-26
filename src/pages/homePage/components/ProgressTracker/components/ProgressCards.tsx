@@ -33,6 +33,7 @@ const ProgressCards = ({
                 alignItems="center"
                 borderRadius="borderRadius400"
                 bg={selectedStage === stage.title ? "#F5C519" : null}
+                style={{ cursor: "pointer" }}
               >
                 <Box
                   id={`outlineBox${

@@ -47,6 +47,7 @@ const ChatWithUs = (): ReactElement => {
                   flexDirection="column"
                   m={3}
                   borderRadius="borderRadius100"
+                  style={{ cursor: "pointer" }}
                   onClick={() => (window.location.href = item.href)}
                 >
                   <Image

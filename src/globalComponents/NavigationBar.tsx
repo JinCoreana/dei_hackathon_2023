@@ -87,15 +87,7 @@ const NavigationBar = ({ isNotHomePage }: NavigationBarProps): ReactElement => {
         </Box>
       </Box>
       {isNotHomePage && (
-        <Box
-          display="flex"
-          alignItems="center"
-          height={70}
-          bg="#e6ebedff"
-          onClick={() => {
-            navigateTo("/");
-          }}
-        >
+        <Box display="flex" alignItems="center" height={70} bg="#e6ebedff">
           <Menu menuType="light" display="flex" alignItems="center">
             <Image
               src={HomePageIcon}
@@ -105,7 +97,15 @@ const NavigationBar = ({ isNotHomePage }: NavigationBarProps): ReactElement => {
               ml={6}
             />
             <MenuItem>
-              <Typography color="black" fontSize="24px" m={0} p={2}>
+              <Typography
+                color="black"
+                fontSize="24px"
+                m={0}
+                p={2}
+                onClick={() => {
+                  navigateTo("/");
+                }}
+              >
                 Back to Homepage
               </Typography>
             </MenuItem>
