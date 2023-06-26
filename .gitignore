@@ -1,14 +1,15 @@
 # Dependency directories
 node_modules/
 build/
-
+.DS_Store
 
 # vscode
 .vscode
-<<<<<<< HEAD
 .vs
-=======
 
-# Pycache
+# Server
+venv
 **/__pycache__/
->>>>>>> 6c913cf (basic functionality)
+
+# Security
+.env

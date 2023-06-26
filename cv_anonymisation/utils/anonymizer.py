@@ -16,7 +16,7 @@ def extract_text(filepath: str) -> str:
 
 def _get_personal_data(candidate_id: int) -> dict:
     # Mocking the response from https://subdomain.sage.hr/api/recruitment/applicants/{candidate_id}
-    mock_response_filename = f"../resources/example_data{candidate_id}.json"
+    mock_response_filename = f"resources/example_data{candidate_id}.json"
     with open(mock_response_filename, "r") as read_file:
         personal_data = read_file.read()
     return json.loads(personal_data)
