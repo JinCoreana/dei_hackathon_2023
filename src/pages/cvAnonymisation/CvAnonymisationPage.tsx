@@ -57,7 +57,11 @@ const CvAnonymisationPage = () => {
     <GridContainer p={0}>
       <NavigationBar isNotHomePage />
       <GridItem alignSelf="stretch" justifySelf="stretch">
-        <Box display="flex" justifyContent="center">
+        <Box
+          display="flex"
+          justifyContent="center"
+          style={{ whiteSpace: "pre-line" }}
+        >
           <Card cardWidth="50vw">
             <CardRow>
               <CardColumn>
