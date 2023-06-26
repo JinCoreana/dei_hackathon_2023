@@ -3,13 +3,13 @@ import Button from "carbon-react/lib/components/button/button.component";
 import Typography from "carbon-react/lib/components/typography/typography.component";
 import { Menu, MenuItem } from "carbon-react/lib/components/menu";
 import Image from "carbon-react/lib/components/image";
-import Icon from "carbon-react/lib/components/icon";
 import { ReactElement, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AlertLogo from "../assets/images/alert.png";
 import SageLogo from "../assets/images/SageLogo.png";
 import Alert from "carbon-react/lib/components/alert";
 import { GridItem } from "carbon-react/lib/components/grid";
+import HomePageIcon from "../assets/images/image 34.png";
 
 interface NavigationBarProps {
   isNotHomePage?: boolean;
@@ -87,19 +87,25 @@ const NavigationBar = ({ isNotHomePage }: NavigationBarProps): ReactElement => {
         </Box>
       </Box>
       {isNotHomePage && (
-        <Box
-          display="flex"
-          alignItems="center"
-          height={70}
-          bg="#e6ebedff"
-          onClick={() => {
-            navigateTo("/");
-          }}
-        >
-          <Menu menuType="light">
-            <Icon ml={20} mb={1} type="home" bgSize="extra-large" />
+        <Box display="flex" alignItems="center" height={70} bg="#e6ebedff">
+          <Menu menuType="light" display="flex" alignItems="center">
+            <Image
+              src={HomePageIcon}
+              alt="Homepage Icon"
+              width="60"
+              height="60"
+              ml={6}
+            />
             <MenuItem>
-              <Typography color="black" fontSize="24px" m={0} p={2}>
+              <Typography
+                color="black"
+                fontSize="24px"
+                m={0}
+                p={2}
+                onClick={() => {
+                  navigateTo("/");
+                }}
+              >
                 Back to Homepage
               </Typography>
             </MenuItem>

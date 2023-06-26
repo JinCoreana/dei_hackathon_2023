@@ -11,8 +11,8 @@ const AdjustmentRequestPage = (): ReactElement => {
       <NavigationBar isNotHomePage />
       <GridContainer>
         <AdjustmentRequestOptions />
-        <ChatWithUs />
       </GridContainer>
+      <ChatWithUs />
     </>
   );
 };
