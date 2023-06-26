@@ -1,0 +1,14 @@
+name: dei_hackathon_2023
+
+on:
+  push:
+    branches:
+      - gh-pages
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name:
+# WIP - BE server deployment logic to be added.
