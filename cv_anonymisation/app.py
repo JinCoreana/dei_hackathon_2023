@@ -1,5 +1,5 @@
 import os
-from flask import Flask, flash, request, redirect, url_for, render_template, send_from_directory
+from flask import Flask, flash, request, redirect, make_response, render_template, send_from_directory
 from werkzeug.utils import secure_filename
 from utils.anonymizer import anonymize
 
@@ -23,7 +23,7 @@ def allowed_file(filename):
 @app.route('/uploads/<string:name>')
 def download_file(name):
 
-    return send_from_directory(app.config["DOWNLOAD_FOLDER"], name, as_attachment=True)
+    return send_from_directory(app.config["DOWNLOAD_FOLDER"], name, as_attachment=False)
 
 @app.route("/anonymise", methods=['GET', 'POST'])
 def home():
@@ -41,19 +41,13 @@ def home():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename) # type: ignore
             filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            '''file.save(filepath)
+            file.save(filepath)
             ofilename = 'anonymized_cv.txt'
             ofilepath = os.path.join(app.config['DOWNLOAD_FOLDER'], ofilename)
             with open(ofilepath,'w', encoding='utf-8') as f:
-                f.write(anonymize(filepath))'''
-            response_body = {
-                'result': anonymize(filepath),
-                'message': 'Data processed successfully'
-            }
-            return response_body, 200
-        
-    return render_template('index.html')
-
+                f.write(anonymize(filepath))
+                 
+            return send_from_directory(app.config["DOWNLOAD_FOLDER"], ofilename, as_attachment=True)
 
 if __name__ == "__main__":
     app.run()

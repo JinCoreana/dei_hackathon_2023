@@ -22,6 +22,7 @@ const CvAnonymisationPage = () => {
   const handleButtonClick = (e: any) => {
     e.preventDefault();
     fileInputRef.current?.click();
+    setAnonymisedData("");
   };
 
   const handleFileChange = (event: any) => {
@@ -37,14 +38,13 @@ const CvAnonymisationPage = () => {
       formData.append("file", submitData, selectedFile);
       try {
         //Used direct url for now. To be refactored with proxy server
-        const response = await fetch("http://localhost:5000/anonymise", {
+        const response = await fetch("/anonymise", {
           method: "POST",
           body: formData,
         });
-
         if (response.ok) {
-          console.log(response);
-          setAnonymisedData(response.body as unknown as string);
+          const parsedResponse = await response.text();
+          setAnonymisedData(parsedResponse);
         } else {
           console.error("Anonymisation Failed", response.status);
         }

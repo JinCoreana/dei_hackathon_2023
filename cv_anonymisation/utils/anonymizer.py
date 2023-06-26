@@ -37,9 +37,9 @@ def final_filter(candidate_id: int, text: str) -> str:
     personal_data = _get_personal_data(candidate_id)
     keyword_list = _get_keywords(personal_data)
     for keyword in keyword_list:
-        text = re.sub(str(keyword), "*****", text, flags=re.IGNORECASE)
+        escaped_keyword = re.escape(keyword)
+        text = re.sub(escaped_keyword, "*****", text, flags=re.IGNORECASE)
     return text
-
 
 def anonymize(filename):
     text = extract_text(filename)
