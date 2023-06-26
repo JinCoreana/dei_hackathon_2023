@@ -5,7 +5,7 @@
         "first_name": "Umesh",
         "last_name": "Gopal",
         "email": "umesh.gopal@zetymail.in",
-        "address": "",
+        "address": null,
         "summary": null,
         "phone_number": "088 90970695",
         "source": "referral",
