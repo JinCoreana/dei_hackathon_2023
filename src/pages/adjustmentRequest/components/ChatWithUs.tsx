@@ -5,7 +5,7 @@ import Typography from "carbon-react/lib/components/typography/typography.compon
 import { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
 import Image from "carbon-react/lib/components/image";
-import chatIcon from "../../../assets/images/MicrosoftTeams-image (16) 3.png";
+import chatIcon from "../../../assets/images/chat.png";
 const ChatWithUs = (): ReactElement => {
   const navigateTo = useNavigate();
 
@@ -30,7 +30,7 @@ const ChatWithUs = (): ReactElement => {
           flexDirection="column"
           bg="#D9D9D9"
         >
-          <Typography color="black" fontSize="28px" mt={4} mr={500}>
+          <Typography color="black" fontSize="28px" pt="2rem">
             Is there anything else we can do? Get in touch below to ask us any
             questions.
           </Typography>
