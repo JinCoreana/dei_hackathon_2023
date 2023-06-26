@@ -3,13 +3,15 @@ import Button from "carbon-react/lib/components/button/button.component";
 import Typography from "carbon-react/lib/components/typography/typography.component";
 import { Menu, MenuItem } from "carbon-react/lib/components/menu";
 import Image from "carbon-react/lib/components/image";
-import { ReactElement, useState } from "react";
+import { ReactElement, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AlertLogo from "../assets/images/alert.png";
 import SageLogo from "../assets/images/SageLogo.png";
 import Alert from "carbon-react/lib/components/alert";
 import { GridItem } from "carbon-react/lib/components/grid";
 import HomePageIcon from "../assets/images/image 34.png";
+import NotificationTable from "../pages/chatWithUs/components/NotificationTable";
+import { GlobalContext } from "../context/GlobalContext";
 
 interface NavigationBarProps {
   isNotHomePage?: boolean;
@@ -33,6 +35,7 @@ const navigationMenu = [
 
 const NavigationBar = ({ isNotHomePage }: NavigationBarProps): ReactElement => {
   const navigateTo = useNavigate();
+  const { chosenApplication } = useContext(GlobalContext);
   const [isOpen, setIsOpen] = useState(false);
   return (
     <GridItem alignSelf="stretch" justifySelf="stretch">
@@ -79,10 +82,14 @@ const NavigationBar = ({ isNotHomePage }: NavigationBarProps): ReactElement => {
             disableEscKey={true}
             title="Notifications"
             showCloseIcon
-            size="extra-small"
+            size={chosenApplication ? "large" : "extra-small"}
             open={isOpen}
           >
-            No New Notification
+            {chosenApplication ? (
+              <NotificationTable chosenApplication={chosenApplication || ""} />
+            ) : (
+              "Application not selected"
+            )}
           </Alert>
         </Box>
       </Box>

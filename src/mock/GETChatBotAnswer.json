@@ -1,0 +1,16 @@
+{
+  "autoAnswers": [
+    {
+      "keywords": ["progress"],
+      "autoMessage": "It usually takes us 1-2 business days to get back to you on the progress.",
+      "external": false,
+      "herf": "/"
+    },
+    {
+      "keywords": ["salary"],
+      "autoMessage": "The salary range for this position is £X0,000 to £X0,000 per year.",
+      "external": false,
+      "herf": "/"
+    }
+  ]
+}

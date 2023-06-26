@@ -1,0 +1,97 @@
+{
+  "id": "XX111",
+  "applications": [
+    {
+      "job_title": "Associate Software Engineer",
+      "notifications": [
+        {
+          "role": "Sage HR Assistance Bot",
+          "email": "-",
+          "title": "Thanks for your application",
+          "message": "We’ve received your application.\nWe’ll let you know if we need anything else.",
+          "date": "1st May 2023"
+        },
+        {
+          "role": "Sage HR Assistance Bot",
+          "email": "-",
+          "title": "Awaiting documentation upload",
+          "message": "Your application is with us, and we’re waiting for you to send us some documents.",
+          "date": "2nd May 2023"
+        }
+      ]
+    },
+    {
+      "job_title": "Graduate Developer",
+      "notifications": [
+        {
+          "role": "Sage HR Assistance Bot",
+          "email": "-",
+          "title": "Thanks for your application",
+          "message": "We’ve received your application.\nWe’ll let you know if we need anything else.",
+          "date": "1st May 2023"
+        },
+        {
+          "role": "Sage HR Assistance Bot",
+          "email": "-",
+          "title": "Awaiting documentation upload",
+          "message": "Your application is with us, and we’re waiting for you to send us some documents.",
+          "date": "2nd May 2023"
+        },
+        {
+          "role": "Sage HR Assistance Bot",
+          "email": "-",
+          "title": "Getting to know you",
+          "message": "We’re looking through your documents now to get to know you a bit better.\nIf we think you’re a good fit, we’ll be in touch with your next steps soon.",
+          "date": "2nd May 2023"
+        },
+        {
+          "role": "Talent Acquisition",
+          "email": "kate@sage.com",
+          "title": "Proof of your certification",
+          "message": "Hi candidate XX111, thank you for uploading your documents I understand you have a certificate on XXX. Please could you upload it here?",
+          "date": "3rd May 2023"
+        },
+        {
+          "role": "Sage HR Assistance Bot",
+          "email": "-",
+          "title": "You have been shortlisted!",
+          "message": "Congratulations! You’ve been shortlisted.\nWe’ll invite you to an interview soon.\nIn the meantime, go to the quick links below to help you prepare,\nor request an adjustment if you need one.",
+          "date": "8th May 2023"
+        },
+        {
+          "role": "Hiring Manager",
+          "email": "carlos@sage.come",
+          "title": "Interview adjustment",
+          "message": "Hi candidate XX111, thank you for sending un a interview adjustment request. When you are available, please can we discuss further via chat?",
+          "date": "12th May 2023"
+        }
+      ]
+    },
+    {
+      "job_title": "Graduate ML Engineer",
+      "notifications": [
+        {
+          "role": "Sage HR Assistance Bot",
+          "email": "-",
+          "title": "Thanks for your application",
+          "message": "We’ve received your application.\nWe’ll let you know if we need anything else.",
+          "date": "1st May 2023"
+        },
+        {
+          "role": "Sage HR Assistance Bot",
+          "email": "-",
+          "title": "Awaiting documentation upload",
+          "message": "Your application is with us, and we’re waiting for you to send us some documents.",
+          "date": "2nd May 2023"
+        },
+        {
+          "role": "Sage HR Assistance Bot",
+          "email": "-",
+          "title": "Getting to know you",
+          "message": "We’re looking through your documents now to get to know you a bit better.\nIf we think you’re a good fit, we’ll be in touch with your next steps soon.",
+          "date": "2nd May 2023"
+        }
+      ]
+    }
+  ]
+}
