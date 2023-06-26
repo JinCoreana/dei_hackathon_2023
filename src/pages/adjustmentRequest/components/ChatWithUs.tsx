@@ -1,11 +1,10 @@
 import Box from "carbon-react/lib/components/box/box.component";
-import Button from "carbon-react/lib/components/button/button.component";
 import { GridItem } from "carbon-react/lib/components/grid";
 import Typography from "carbon-react/lib/components/typography/typography.component";
 import { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
 import Image from "carbon-react/lib/components/image";
-import chatIcon from "../../../assets/images/MicrosoftTeams-image (16) 3.png";
+import chatIcon from "../../../assets/images/chat.png";
 const ChatWithUs = (): ReactElement => {
   const navigateTo = useNavigate();
 
