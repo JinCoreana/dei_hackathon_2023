@@ -53,6 +53,7 @@ const MyRequest = (): ReactElement => {
             ml={100}
             mb={20}
             fontSize="28px"
+            lineHeight="32px"
           >
             You have submitted the following adjustment requests:
           </Typography>
@@ -60,6 +61,7 @@ const MyRequest = (): ReactElement => {
             fontWeight="strong"
             alignItems="left"
             fontSize="24px"
+            lineHeight="32px"
             ml={100}
             mb={50}
           >
@@ -126,6 +128,7 @@ const MyRequest = (): ReactElement => {
             fontSize="24px"
             ml={100}
             mb={50}
+            lineHeight="32px"
           >
             If you need to change anything about your requests or have any
             questions, get in touch with us below.
@@ -140,6 +143,7 @@ const MyRequest = (): ReactElement => {
             ml={100}
             mb={20}
             fontSize="28px"
+            lineHeight="32px"
           >
             You have not made any adjustment requests yet.
           </Typography>

@@ -30,7 +30,7 @@ const ChatWithUs = (): ReactElement => {
           flexDirection="column"
           bg="#D9D9D9"
         >
-          <Typography color="black" fontSize="28px" pt="2rem">
+          <Typography color="black" fontSize="28px" pt="2rem" lineHeight="32px">
             Is there anything else we can do? Get in touch below to ask us any
             questions.
           </Typography>
