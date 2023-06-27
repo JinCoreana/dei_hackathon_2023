@@ -76,40 +76,42 @@ const NotificationTable = ({
   };
 
   return (
-    <FlatTable hasStickyHead>
-      <FlatTableHead>
-        <FlatTableRow>
-          <FlatTableHeader>Date</FlatTableHeader>
-          <FlatTableHeader>Role</FlatTableHeader>
-          <FlatTableHeader>Email</FlatTableHeader>
-          <FlatTableHeader>Title</FlatTableHeader>
-        </FlatTableRow>
-      </FlatTableHead>
-      <FlatTableBody>
-        {notifications?.map((notification) => {
-          return (
-            <FlatTableRow
-              key={notification.message}
-              expandable
-              subRows={[
-                <HiddenRows
-                  title={notification.title}
-                  message={notification.message}
-                  role={notification.role}
-                />,
-              ]}
-            >
-              <FlatTableCell>{notification.date}</FlatTableCell>
-              <FlatTableCell>{notification.role}</FlatTableCell>
-              <FlatTableCell>{notification.email}</FlatTableCell>
-              <FlatTableCell>
-                <Link>{notification.title}</Link>
-              </FlatTableCell>
-            </FlatTableRow>
-          );
-        })}
-      </FlatTableBody>
-    </FlatTable>
+    <Box>
+      <FlatTable hasStickyHead>
+        <FlatTableHead>
+          <FlatTableRow>
+            <FlatTableHeader>Date</FlatTableHeader>
+            <FlatTableHeader>Role</FlatTableHeader>
+            <FlatTableHeader>Email</FlatTableHeader>
+            <FlatTableHeader>Title</FlatTableHeader>
+          </FlatTableRow>
+        </FlatTableHead>
+        <FlatTableBody>
+          {notifications?.map((notification) => {
+            return (
+              <FlatTableRow
+                key={notification.message}
+                expandable
+                subRows={[
+                  <HiddenRows
+                    title={notification.title}
+                    message={notification.message}
+                    role={notification.role}
+                  />,
+                ]}
+              >
+                <FlatTableCell>{notification.date}</FlatTableCell>
+                <FlatTableCell>{notification.role}</FlatTableCell>
+                <FlatTableCell>{notification.email}</FlatTableCell>
+                <FlatTableCell>
+                  <Link>{notification.title}</Link>
+                </FlatTableCell>
+              </FlatTableRow>
+            );
+          })}
+        </FlatTableBody>
+      </FlatTable>
+    </Box>
   );
 };
 

@@ -12,7 +12,7 @@ export const GlobalContext = createContext({
   chosenApplication: "Select applicant",
   chatBotOpen: false,
   chatAgent: "",
-  chatData: INITIAL_CHAT,
+  chatData: INITIAL_CHAT as Chat[],
   toaster: false,
   setChosenApplication: {} as Dispatch<SetStateAction<string>>,
   setToaster: {} as Dispatch<SetStateAction<boolean>>,
@@ -24,7 +24,9 @@ export const GlobalContext = createContext({
 export type Chat = {
   id: number;
   sender: string;
-  message: string;
+  autoMessage: string;
+  link: string | undefined;
+  isExternal: boolean | undefined;
 };
 
 const GlobalContextProvider = ({

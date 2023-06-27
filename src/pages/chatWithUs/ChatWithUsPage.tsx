@@ -12,12 +12,23 @@ const ChatWithUsPage = (): ReactElement => {
   return (
     <>
       <NavigationBar isNotHomePage />
-      <GridItem alignSelf="stretch" justifySelf="stretch">
-        <Box display="flex" justifyContent="center" mt={100}>
-          <NotificationTable chosenApplication={chosenApplication} />
-          {chatBotOpen && <ChatBot />}
-        </Box>
-      </GridItem>
+      {chosenApplication ? (
+        <GridItem alignSelf="stretch" justifySelf="stretch">
+          <Box display="flex" justifyContent="center" mt={100}>
+            <Box>
+              <Typography variant="h3" fontSize="24px" mb={2}>
+                Your notifications
+              </Typography>
+              <NotificationTable chosenApplication={chosenApplication} />
+            </Box>
+            {chatBotOpen && <ChatBot />}
+          </Box>
+        </GridItem>
+      ) : (
+        <Typography variant="h3" fontSize="24px" mt={100} ml={100}>
+          Please select your application to view notifications
+        </Typography>
+      )}
     </>
   );
 };
