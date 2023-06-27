@@ -13,7 +13,7 @@ import SectionTitle from "../../../globalComponents/SectionTitle";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../../context/GlobalContext";
 const QuickLinks = (): ReactElement | null => {
-  const { chosenApplication } = useContext(GlobalContext);
+  const { chosenApplication, setToaster } = useContext(GlobalContext);
   const navigateTo = useNavigate();
   const quicklinkGrid = [
     {
@@ -22,7 +22,7 @@ const QuickLinks = (): ReactElement | null => {
       title: "My Applications",
       subtitle: "View application details and documents",
       external: true,
-      href: "/",
+      href: null,
     },
     {
       bgColor: "#007E45",
@@ -30,7 +30,7 @@ const QuickLinks = (): ReactElement | null => {
       title: "Interview process guide",
       subtitle: "Find out what to expect at each stage",
       external: true,
-      href: "/",
+      href: null,
     },
     {
       bgColor: "#00324C",
@@ -38,7 +38,7 @@ const QuickLinks = (): ReactElement | null => {
       title: "Preparation resources",
       subtitle: "Prepare for interview at your own pace",
       external: true,
-      href: "/",
+      href: null,
     },
     {
       bgColor: "#007E45",
@@ -105,11 +105,13 @@ const QuickLinks = (): ReactElement | null => {
                   m={1}
                   borderRadius="borderRadius100"
                   style={{ cursor: "pointer" }}
-                  onClick={() =>
-                    item.external
+                  onClick={() => {
+                    !item.href
+                      ? setToaster(true)
+                      : item.external
                       ? (window.location.href = item.href)
-                      : navigateTo(item.href)
-                  }
+                      : navigateTo(item.href);
+                  }}
                 >
                   <Image
                     width={75}

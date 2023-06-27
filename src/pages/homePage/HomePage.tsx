@@ -7,12 +7,14 @@ import NavigationBar from "../../globalComponents/NavigationBar";
 import VideoCarousel from "./components/VideoCarousel/VideoCarousel";
 import ProgressTracker from "./components/ProgressTracker/ProgressTracker";
 import { GlobalContextProvider } from "../../context/GlobalContext";
+import Toaster from "../../globalComponents/Toaster";
 
 const HomePage = (): ReactElement => {
   return (
     <>
       <GlobalContextProvider>
         <GridContainer p={0}>
+          <Toaster />
           <NavigationBar />
           <ProgressTracker />
           <QuickLinks />
