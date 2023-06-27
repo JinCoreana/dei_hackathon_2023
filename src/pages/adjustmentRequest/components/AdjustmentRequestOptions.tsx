@@ -3,18 +3,11 @@ import Typography from "carbon-react/lib/components/typography/typography.compon
 import { Dispatch, ReactElement, SetStateAction, useState } from "react";
 import Image from "carbon-react/lib/components/image";
 import { GridItem } from "carbon-react/lib/components/grid";
-import icon1 from "../../../assets/images/icon1.png";
-import icon2 from "../../../assets/images/icon2.png";
-import icon3 from "../../../assets/images/icon3.png";
-import icon4 from "../../../assets/images/icon4.png";
-import icon5 from "../../../assets/images/icon5.png";
-import icon6 from "../../../assets/images/icon6.png";
-import icon7 from "../../../assets/images/icon7.png";
-import icon8 from "../../../assets/images/icon8.png";
-import icon9 from "../../../assets/images/Fill.png";
+
 import SectionTitle from "../../../globalComponents/SectionTitle";
 import RequestModal from "./RequestModal";
 import { AdjustRequestPost } from "../AdjustmentRequest.types";
+import { ADJUSTMENT_REQUEST_BUTTONS } from "./contants";
 
 interface AdjustmentRequestOptions {
   data: AdjustRequestPost[];
@@ -28,46 +21,6 @@ const AdjustmentRequestOptions = ({
   const [isModalOpen, setIsModalOpen] = useState<string[]>(
     Array(6).fill(false)
   );
-  const adjustmentGrid = [
-    {
-      bgColor: "#007E45",
-      iconImage: icon1,
-      title: "Request Additional Time",
-      modalTitle: "additional time",
-    },
-    {
-      bgColor: "#00324C",
-      iconImage: icon2,
-      title: "Written Instructions",
-      modalTitle: "written instructions",
-    },
-
-    {
-      bgColor: "#007E45",
-      iconImage: icon6,
-      title: "Visual Supports",
-      modalTitle: "visual aid",
-    },
-
-    {
-      bgColor: "#00324C",
-      iconImage: icon8,
-      title: "Clear Communication\t(Direct Language)",
-      modalTitle: "communication adjustment",
-    },
-    {
-      bgColor: "#007E45",
-      iconImage: icon3,
-      title: "Interview Space",
-      modalTitle: "interview space",
-    },
-    {
-      bgColor: "#00324C",
-      iconImage: icon9,
-      title: "Other Adjustment",
-      modalTitle: "other adjustment",
-    },
-  ];
 
   const setModalByNumber = (order: number, modalTitle: string) => {
     const chosenModal = [...isModalOpen];
@@ -114,13 +67,15 @@ const AdjustmentRequestOptions = ({
         </Box>
         <SectionTitle title="Interview adjustments" />
         <Box
+          pl={300}
+          pr={300}
           display="flex"
           justifyContent="center"
           alignItems="center"
           flexWrap="wrap"
         >
           {OpenModal()}
-          {adjustmentGrid.map((item, i) => {
+          {ADJUSTMENT_REQUEST_BUTTONS.map((item, i) => {
             return (
               <Box key={item.title}>
                 <Box

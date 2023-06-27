@@ -11,7 +11,7 @@ export type AdjustRequestOption = {
   title:
     | "additional time"
     | "written instructions"
-    | "quiet or private space"
+    | "space adjustment"
     | "visual aid"
     | "communication adjustment"
     | "other adjustment";

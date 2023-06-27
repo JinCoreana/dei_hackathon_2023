@@ -46,7 +46,7 @@ const RequestModal = ({
       }
     } else if (
       values.title === "written instructions" ||
-      values.title === "quiet or private space" ||
+      values.title === "space adjustment" ||
       values.title === "visual aid"
     ) {
       if (!values.radio) {

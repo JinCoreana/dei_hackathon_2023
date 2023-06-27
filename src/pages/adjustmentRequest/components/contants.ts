@@ -2,6 +2,12 @@ import {
   AdjustRequestOption,
   AdjustRequestPost,
 } from "../AdjustmentRequest.types";
+import icon1 from "../../../assets/images/icon1.png";
+import icon2 from "../../../assets/images/icon2.png";
+import icon3 from "../../../assets/images/icon3.png";
+import icon6 from "../../../assets/images/icon6.png";
+import icon8 from "../../../assets/images/icon8.png";
+import icon9 from "../../../assets/images/Fill.png";
 
 export const ADJUSTMENT_REQUEST_INITIAL_DATA: AdjustRequestPost = {
   title: "",
@@ -63,7 +69,7 @@ export const ADJUSTMENT_REQUEST_OPTIONS: AdjustRequestOption[] = [
     dropdown: null,
   },
   {
-    title: "quiet or private space",
+    title: "space adjustment",
     intro: null,
     radio: {
       title: "Let us know if you would benefit from a quiet or private space.",
@@ -169,5 +175,46 @@ export const ADJUSTMENT_REQUEST_OPTIONS: AdjustRequestOption[] = [
         "The more information you give us, the more we can try to accommodate you.",
     },
     dropdown: null,
+  },
+];
+
+export const ADJUSTMENT_REQUEST_BUTTONS = [
+  {
+    bgColor: "#007E45",
+    iconImage: icon1,
+    title: "Request additional time",
+    modalTitle: "additional time",
+  },
+  {
+    bgColor: "#00324C",
+    iconImage: icon2,
+    title: "Written instructions",
+    modalTitle: "written instructions",
+  },
+
+  {
+    bgColor: "#007E45",
+    iconImage: icon6,
+    title: "Visual aids",
+    modalTitle: "visual aid",
+  },
+
+  {
+    bgColor: "#00324C",
+    iconImage: icon8,
+    title: "Clear communication\t(direct language)",
+    modalTitle: "communication adjustment",
+  },
+  {
+    bgColor: "#007E45",
+    iconImage: icon3,
+    title: "Interview space",
+    modalTitle: "space adjustment",
+  },
+  {
+    bgColor: "#00324C",
+    iconImage: icon9,
+    title: "Other adjustment",
+    modalTitle: "other adjustment",
   },
 ];

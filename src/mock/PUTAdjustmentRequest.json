@@ -3,15 +3,7 @@
     "title": "visual aid",
     "date": "07/05/2023",
     "status": "Approved",
-    "radio": "Closed Captioning",
-    "dropdown": null,
-    "textbox": ""
-  },
-  {
-    "title": "quiet or private space",
-    "status": "In review",
-    "date": "08/05/2023",
-    "radio": "Closed Captioning",
+    "radio": "Text size adjustment",
     "dropdown": null,
     "textbox": ""
   }
