@@ -18,26 +18,25 @@ import Icon from "carbon-react/lib/components/icon";
 import Link from "carbon-react/lib/components/link";
 import Pill from "carbon-react/lib/components/pill";
 const MyRequest = (): ReactElement => {
-
   // for demo purpose, uncomment line 24 and comment the other const myRequest (mock data would be used otherwise)
-  
+
   // const myRequests: any[] = [];
   const myRequests: any[] = [
     {
       heading: "Visual Support",
-      status: { heading: "Status ", value: "Approved", pillBorder:"#008A21"},
+      status: { heading: "Status ", value: "Approved", pillBorder: "#008A21" },
       requested: { heading: "Requested:", value: "07/05/2023" },
       details: { heading: "Detail:", value: "Closed captioning" },
     },
     {
       heading: "Quiet or private space",
-      status: { heading: "Status ", value: "Declined", pillBorder:"#CB374A"},
+      status: { heading: "Status ", value: "Declined", pillBorder: "#CB374A" },
       requested: { heading: "Requested: ", value: "06/05/2023" },
       details: { heading: "Detail:", value: "N/A" },
     },
     {
       heading: "Additional time",
-      status: { heading: "Status ", value: "In review", pillBorder:"#335B70"},
+      status: { heading: "Status ", value: "In review", pillBorder: "#335B70" },
       requested: { heading: "Requested:", value: "02/05/2023" },
       details: { heading: "Detail:", value: "Regular breaks" },
     },
@@ -79,17 +78,28 @@ const MyRequest = (): ReactElement => {
                     roundness="default"
                   >
                     <CardRow>
-                      <Typography variant="segment-header" alignItems="center" mt={2}>
+                      <Typography
+                        variant="segment-header"
+                        alignItems="center"
+                        mt={2}
+                        spacing="small"
+                      >
                         {item.heading}
                       </Typography>
                     </CardRow>
-                    <CardRow>
+                    <CardRow pb={0}>
                       <Typography fontSize="20px" fontWeight="bold" mr={2}>
                         {item.status.heading}
                       </Typography>
-                      <Pill borderColor={item.status.pillBorder}>{item.status.value}</Pill>
+                      <Pill
+                        borderColor={item.status.pillBorder}
+                        size="S"
+                        mb={2}
+                      >
+                        {item.status.value}
+                      </Pill>
                     </CardRow>
-                    <CardRow>
+                    <CardRow pb={0} pt={0}>
                       <Typography fontSize="20px" fontWeight="bold" m={0}>
                         {item.requested.heading}
                       </Typography>
@@ -97,7 +107,7 @@ const MyRequest = (): ReactElement => {
                         {item.requested.value}
                       </Typography>
                     </CardRow>
-                    <CardRow>
+                    <CardRow pb={0}>
                       <Typography fontSize="20px" fontWeight="bold" m={0}>
                         {item.details.heading}
                       </Typography>
@@ -108,9 +118,8 @@ const MyRequest = (): ReactElement => {
                   </Card>
                 </>
               );
-            })
-            }
-          </Box>          
+            })}
+          </Box>
           <Typography
             variant="p"
             alignItems="left"
@@ -122,9 +131,8 @@ const MyRequest = (): ReactElement => {
             questions, get in touch with us below.
           </Typography>
         </GridItem>
-      ) :
-        (   
-          <GridItem alignSelf="stretch" justifySelf="stretch" gridColumn="1/13">
+      ) : (
+        <GridItem alignSelf="stretch" justifySelf="stretch" gridColumn="1/13">
           <SectionTitle title="My adjustments" />
           <Typography
             variant="h3"
@@ -135,12 +143,9 @@ const MyRequest = (): ReactElement => {
           >
             You have not made any adjustment requests yet.
           </Typography>
-          </GridItem>
-        )
-      
-      }
+        </GridItem>
+      )}
     </>
-      
   );
 };
 
