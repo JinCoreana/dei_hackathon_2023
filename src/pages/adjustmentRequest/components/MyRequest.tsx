@@ -2,7 +2,7 @@ import Box from "carbon-react/lib/components/box/box.component";
 import Button from "carbon-react/lib/components/button/button.component";
 import { GridItem } from "carbon-react/lib/components/grid";
 import Typography from "carbon-react/lib/components/typography/typography.component";
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Image from "carbon-react/lib/components/image";
 import chatIcon from "../../../assets/images/chat.png";
@@ -17,7 +17,8 @@ import Heading from "carbon-react/lib/components/heading";
 import Icon from "carbon-react/lib/components/icon";
 import Link from "carbon-react/lib/components/link";
 import Pill from "carbon-react/lib/components/pill";
-const MyRequest = (): ReactElement => {
+import { AdjustRequestPost } from "../AdjustmentRequest.types";
+const MyRequest = ({ data }: { data: AdjustRequestPost[] }): ReactElement => {
   // for demo purpose, uncomment line 24 and comment the other const myRequest (mock data would be used otherwise)
 
   // const myRequests: any[] = [];

@@ -35,7 +35,7 @@ const ChatWithUs = (): ReactElement => {
           </Typography>
           {chatToUs.map((item) => {
             return (
-              <>
+              <Box key={item.title}>
                 <Box
                   width={461}
                   height={221}
@@ -62,7 +62,7 @@ const ChatWithUs = (): ReactElement => {
                     {item.subtitle}
                   </Typography>
                 </Box>
-              </>
+              </Box>
             );
           })}
         </Box>
