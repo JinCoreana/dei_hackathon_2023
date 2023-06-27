@@ -28,36 +28,14 @@ const AdjustmentRequestOptions = (): ReactElement => {
       title: "Written Instructions",
       href: "/",
     },
-    {
-      bgColor: "#007E45",
-      iconImage: icon3,
-      title: "Quiet & Private Space",
-      href: "/",
-    },
-    {
-      bgColor: "#00324C",
-      iconImage: icon5,
-      title: "Interview Format Flexibility",
-      href: "/",
-    },
+
     {
       bgColor: "#007E45",
       iconImage: icon6,
       title: "Visual Supports",
       href: "/",
     },
-    {
-      bgColor: "#00324C",
-      iconImage: icon7,
-      title: "Additional Breaks",
-      href: "/",
-    },
-    {
-      bgColor: "#007E45",
-      iconImage: icon4,
-      title: "Assistance in the interview",
-      href: "/",
-    },
+
     {
       bgColor: "#00324C",
       iconImage: icon8,
@@ -66,6 +44,12 @@ const AdjustmentRequestOptions = (): ReactElement => {
     },
     {
       bgColor: "#007E45",
+      iconImage: icon3,
+      title: "Interview Space",
+      href: "/",
+    },
+    {
+      bgColor: "#00324C",
       iconImage: icon9,
       title: "Other Adjustment",
       href: "/",
@@ -109,7 +93,7 @@ const AdjustmentRequestOptions = (): ReactElement => {
                   alignItems="center"
                   flexDirection="column"
                   mb={5}
-                  flexBasis="30%"
+                  flexBasis="40%"
                 >
                   <Box
                     width={461}

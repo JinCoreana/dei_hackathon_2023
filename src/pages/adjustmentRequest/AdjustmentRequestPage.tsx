@@ -4,6 +4,7 @@ import NavigationBar from "../../globalComponents/NavigationBar";
 import { GridContainer } from "carbon-react/lib/components/grid";
 import AdjustmentRequestOptions from "./components/AdjustmentRequestOptions";
 import ChatWithUs from "./components/ChatWithUs";
+import MyRequest from "./components/MyRequest";
 
 const AdjustmentRequestPage = (): ReactElement => {
   return (
@@ -12,6 +13,7 @@ const AdjustmentRequestPage = (): ReactElement => {
       <GridContainer>
         <AdjustmentRequestOptions />
       </GridContainer>
+      <MyRequest />
       <ChatWithUs />
     </>
   );
