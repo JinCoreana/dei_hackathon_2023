@@ -77,9 +77,12 @@ export const ADJUSTMENT_REQUEST_OPTIONS: AdjustRequestOption[] = [
       content: [
         {
           order: 1,
-          option: "I need a quiet or private space for an in-person interview",
+          option: "I need wheelchair access",
         },
-        { order: 2, option: "I need somewhere to do an online interview" },
+        { order: 2, option: "I need stair-free access" },
+        { order: 3, option: "I need a room with audio induction" },
+        { order: 4, option: "I need assistance moving around the building" },
+        { order: 5, option: "I need a quiet or private space" },
       ],
     },
     textbox: {

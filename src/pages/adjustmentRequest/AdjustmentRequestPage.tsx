@@ -7,7 +7,6 @@ import ChatWithUs from "./components/ChatWithUs";
 import MyRequest from "./components/MyRequest";
 import { AdjustRequestPost } from "./AdjustmentRequest.types";
 import AdjustmentRequest from "../../mock/PUTAdjustmentRequest.json";
-import { ADJUSTMENT_REQUEST_INITIAL_DATA } from "./components/contants";
 
 const AdjustmentRequestPage = (): ReactElement => {
   const [adjustmentRequestData, setAdjustmentRequestData] =

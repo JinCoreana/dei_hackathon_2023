@@ -3,7 +3,6 @@ import Typography from "carbon-react/lib/components/typography/typography.compon
 import { Dispatch, ReactElement, SetStateAction, useState } from "react";
 import Image from "carbon-react/lib/components/image";
 import { GridItem } from "carbon-react/lib/components/grid";
-
 import SectionTitle from "../../../globalComponents/SectionTitle";
 import RequestModal from "./RequestModal";
 import { AdjustRequestPost } from "../AdjustmentRequest.types";
@@ -33,11 +32,13 @@ const AdjustmentRequestOptions = ({
     for (let i = 0; i < isModalOpen.length; i++) {
       modal.push(
         !!isModalOpen[i] && (
-          <RequestModal
-            modalTitle={isModalOpen[i]}
-            setIsModalOpen={setIsModalOpen}
-            setAdjustmentRequestData={setData}
-          />
+          <Box>
+            <RequestModal
+              modalTitle={isModalOpen[i]}
+              setIsModalOpen={setIsModalOpen}
+              setAdjustmentRequestData={setData}
+            />
+          </Box>
         )
       );
     }
@@ -67,12 +68,11 @@ const AdjustmentRequestOptions = ({
         </Box>
         <SectionTitle title="Interview adjustments" />
         <Box
-          pl={300}
-          pr={300}
+          m="auto"
           display="flex"
           justifyContent="center"
-          alignItems="center"
           flexWrap="wrap"
+          style={{ maxWidth: "1000px" }}
         >
           {OpenModal()}
           {ADJUSTMENT_REQUEST_BUTTONS.map((item, i) => {
@@ -84,7 +84,6 @@ const AdjustmentRequestOptions = ({
                   alignItems="center"
                   flexDirection="column"
                   mb={5}
-                  flexBasis="40%"
                 >
                   <Box
                     width={461}

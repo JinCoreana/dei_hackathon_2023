@@ -84,17 +84,17 @@ const QuickLinks = (): ReactElement | null => {
         </Typography>
 
         <Box
-          m="0 100px 0 100px"
+          m="auto"
           display="flex"
           justifyContent="center"
           alignItems="center"
           flexWrap="wrap"
+          style={{ maxWidth: "1500px" }}
         >
           {quicklinkGrid.map((item) => {
             return (
               <>
                 <Box
-                  p={20}
                   width={461}
                   height={221}
                   bg={item.bgColor}
@@ -102,7 +102,6 @@ const QuickLinks = (): ReactElement | null => {
                   justifyContent="center"
                   alignItems="center"
                   flexDirection="column"
-                  flexBasis="28%"
                   m={1}
                   borderRadius="borderRadius100"
                   style={{ cursor: "pointer" }}

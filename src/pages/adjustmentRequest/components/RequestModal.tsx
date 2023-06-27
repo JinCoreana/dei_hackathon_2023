@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import { AdjustRequestPost } from "../AdjustmentRequest.types";
-import { Dispatch, ReactElement, SetStateAction, useEffect } from "react";
+import { Dispatch, ReactElement, SetStateAction } from "react";
 import Box from "carbon-react/lib/components/box/box.component";
 import Form from "carbon-react/lib/components/form";
 import Textarea from "carbon-react/lib/components/textarea";
@@ -70,14 +70,26 @@ const RequestModal = ({
   const initialValues: AdjustRequestPost = {
     ...ADJUSTMENT_REQUEST_INITIAL_DATA,
     title: modalTitle,
-    date: "30/06/2023",
+    date: new Date()
+      .toLocaleDateString("en-GB", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      })
+      .replace(/\//g, "/"),
   };
 
   //Not sure if it's error from Carbon. Formik handleSubmit is not working.
   const manualSubmit = () => {
     validateForm().then(() => {
       if (Object.values(errors).length > 1) {
-        setAdjustmentRequestData((prev) => [...prev, values]);
+        setAdjustmentRequestData((prev) => {
+          return prev.some(
+            (item) => item.title === values.title && item.radio === values.radio
+          )
+            ? prev
+            : [...prev, values];
+        });
         setIsModalOpen(Array(6).fill(false));
       }
     });
@@ -91,8 +103,8 @@ const RequestModal = ({
     });
 
   return (
-    <Box>
-      <Dialog open showCloseIcon={true} title={`Request ${modalTitle}`}>
+    <Box style={{ whiteSpace: "pre-line" }} display="flex">
+      <Dialog open title={`Request ${modalTitle}`} subtitle={`\n`}>
         <Form
           onSubmit={handleSubmit}
           saveButton={
