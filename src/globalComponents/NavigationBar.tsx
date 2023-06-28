@@ -46,7 +46,13 @@ const NavigationBar = ({ isNotHomePage }: NavigationBarProps): ReactElement => {
         display="flex"
         flexDirection="row"
       >
-        <Box display="flex" justifyContent="center" alignItems="center" ml={30}>
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          ml={30}
+          onClick={() => navigateTo("/cv_anonymisation")}
+        >
           <Image src={SageLogo} alt="Sage Icon" width="100" height="56" />
         </Box>
         <Box
