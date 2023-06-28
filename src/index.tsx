@@ -8,6 +8,7 @@ import AccommodationRequestPage from "./pages/adjustmentRequest/AdjustmentReques
 import ChatWithUsPage from "./pages/chatWithUs/ChatWithUsPage";
 import GlobalStyle from "carbon-react/lib/style/global-style";
 import "carbon-react/lib/style/fonts.css";
+import CvAnonymisationPage from "./pages/cvAnonymisation/CvAnonymisationPage";
 
 import { GlobalContextProvider } from "./context/GlobalContext";
 
@@ -24,6 +25,7 @@ ReactDOM.render(
               element={<AccommodationRequestPage />}
             />
             <Route path="/chat_with_us" element={<ChatWithUsPage />} />
+            <Route path="/cv_anonymisation" element={<CvAnonymisationPage />} />
           </Routes>
         </Router>
       </GlobalContextProvider>
