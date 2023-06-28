@@ -40,8 +40,7 @@ const CvAnonymisationPage = () => {
       const formData = new FormData();
       formData.append("file", submitData, selectedFile);
       try {
-        //Used direct url for now. To be refactored with proxy server
-        const response = await fetch("/anonymise", {
+        const response = await fetch("/", {
           method: "POST",
           body: formData,
         });
