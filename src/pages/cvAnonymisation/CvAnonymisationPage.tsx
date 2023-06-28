@@ -40,7 +40,7 @@ const CvAnonymisationPage = () => {
       const formData = new FormData();
       formData.append("file", submitData, selectedFile);
       try {
-        const response = await fetch("/", {
+        const response = await fetch("https://dei-cv-flask.onrender.com", {
           method: "POST",
           body: formData,
         });
