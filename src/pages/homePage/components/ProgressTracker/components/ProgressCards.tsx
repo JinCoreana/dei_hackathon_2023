@@ -1,9 +1,10 @@
 import Box from "carbon-react/lib/components/box/box.component";
 import { STAGES } from "../constants/Stages";
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement, useContext, useEffect, useState } from "react";
 import { Stages, Vacancy } from "../ProgressTracker.types";
 import Typography from "carbon-react/lib/components/typography/typography.component";
 import { borderWidth200 } from "@sage/design-tokens/js/base/common";
+import { GlobalContext } from "../../../../../context/GlobalContext";
 
 interface ProgressCardProps {
   selectedVacancy: Vacancy;
@@ -13,6 +14,7 @@ const ProgressCards = ({
   selectedVacancy,
 }: ProgressCardProps): ReactElement => {
   const [selectedStage, setSelectedStage] = useState("");
+  const { chosenApplication } = useContext(GlobalContext);
 
   useEffect(() => {
     setSelectedStage("");
@@ -93,7 +95,7 @@ const ProgressCards = ({
           ml={100}
           style={{ whiteSpace: "pre-line" }}
         >
-          {selectedStage ? (
+          {selectedStage && chosenApplication && (
             <>
               <Typography variant="h3" fontSize="36px" mb={3}>
                 {selectedStage}
@@ -106,7 +108,11 @@ const ProgressCards = ({
                     </Typography>
                     <Typography
                       fontSize="24px"
-                      style={{ color: "green", textDecoration: "underline" }}
+                      style={{
+                        color: "green",
+                        textDecoration: "underline",
+                        cursor: "pointer",
+                      }}
                     >
                       {stage.linkText}
                     </Typography>
@@ -114,11 +120,6 @@ const ProgressCards = ({
                 )
               )}
             </>
-          ) : (
-            <Typography fontSize="24px" mt={50}>
-              Select an application to find out more about the stages for that
-              application.
-            </Typography>
           )}
         </Box>
       </Box>

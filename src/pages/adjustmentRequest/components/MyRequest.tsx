@@ -1,50 +1,15 @@
 import Box from "carbon-react/lib/components/box/box.component";
-import Button from "carbon-react/lib/components/button/button.component";
 import { GridItem } from "carbon-react/lib/components/grid";
 import Typography from "carbon-react/lib/components/typography/typography.component";
 import { ReactElement } from "react";
-import { useNavigate } from "react-router-dom";
-import Image from "carbon-react/lib/components/image";
-import chatIcon from "../../../assets/images/chat.png";
 import SectionTitle from "../../../globalComponents/SectionTitle";
-import {
-  Card,
-  CardRow,
-  CardFooter,
-  CardColumn,
-} from "carbon-react/lib/components/card";
-import Heading from "carbon-react/lib/components/heading";
-import Icon from "carbon-react/lib/components/icon";
-import Link from "carbon-react/lib/components/link";
+import { Card, CardRow } from "carbon-react/lib/components/card";
 import Pill from "carbon-react/lib/components/pill";
-const MyRequest = (): ReactElement => {
-  // for demo purpose, uncomment line 24 and comment the other const myRequest (mock data would be used otherwise)
-
-  // const myRequests: any[] = [];
-  const myRequests: any[] = [
-    {
-      heading: "Visual Support",
-      status: { heading: "Status ", value: "Approved", pillBorder: "#008A21" },
-      requested: { heading: "Requested:", value: "07/05/2023" },
-      details: { heading: "Detail:", value: "Closed captioning" },
-    },
-    {
-      heading: "Quiet or private space",
-      status: { heading: "Status ", value: "Declined", pillBorder: "#CB374A" },
-      requested: { heading: "Requested: ", value: "06/05/2023" },
-      details: { heading: "Detail:", value: "N/A" },
-    },
-    {
-      heading: "Additional time",
-      status: { heading: "Status ", value: "In review", pillBorder: "#335B70" },
-      requested: { heading: "Requested:", value: "02/05/2023" },
-      details: { heading: "Detail:", value: "Regular breaks" },
-    },
-  ];
-
+import { AdjustRequestPost } from "../AdjustmentRequest.types";
+const MyRequest = ({ data }: { data: AdjustRequestPost[] }): ReactElement => {
   return (
     <>
-      {myRequests.length > 0 ? (
+      {data.length > 0 ? (
         <GridItem alignSelf="stretch" justifySelf="stretch" gridColumn="1/13">
           <SectionTitle title="My adjustments" />
           <Typography
@@ -68,8 +33,8 @@ const MyRequest = (): ReactElement => {
             To see more details about your requests, go to your notifications.
           </Typography>
 
-          <Box display="flex" justifyContent="center" flexWrap="wrap">
-            {myRequests.map((item) => {
+          <Box display="flex" flexWrap="wrap" ml="100px" mr="20px">
+            {data.map((item) => {
               return (
                 <>
                   <Card
@@ -86,36 +51,59 @@ const MyRequest = (): ReactElement => {
                         mt={2}
                         spacing="small"
                       >
-                        {item.heading}
+                        {item.title.charAt(0).toUpperCase() +
+                          item.title.slice(1)}
                       </Typography>
                     </CardRow>
                     <CardRow pb={0}>
                       <Typography fontSize="20px" fontWeight="bold" mr={2}>
-                        {item.status.heading}
+                        Status
                       </Typography>
                       <Pill
-                        borderColor={item.status.pillBorder}
+                        borderColor={
+                          item.status === "Approved"
+                            ? "#008A21"
+                            : "In review"
+                            ? "#335B70"
+                            : "Declined"
+                            ? "#335B70"
+                            : "#008A21"
+                        }
                         size="S"
                         mb={2}
                       >
-                        {item.status.value}
+                        {item.status}
                       </Pill>
                     </CardRow>
                     <CardRow pb={0} pt={0}>
-                      <Typography fontSize="20px" fontWeight="bold" m={0}>
-                        {item.requested.heading}
+                      <Typography
+                        fontSize="20px"
+                        fontWeight="bold"
+                        m={0}
+                        mr={1}
+                      >
+                        Requested:
                       </Typography>
                       <Typography variant="h4" m={0}>
-                        {item.requested.value}
+                        {item.date}
                       </Typography>
                     </CardRow>
                     <CardRow pb={0}>
-                      <Typography fontSize="20px" fontWeight="bold" m={0}>
-                        {item.details.heading}
+                      <Typography
+                        fontSize="20px"
+                        fontWeight="bold"
+                        m={0}
+                        mr={1}
+                      >
+                        Details:
                       </Typography>
-                      <Typography variant="h4" mb={2}>
-                        {item.details.value}
-                      </Typography>
+                      <Box>
+                        <Typography variant="h4" mb={2}>
+                          {item.radio}
+                          {item.dropdown}
+                          {item.textbox}
+                        </Typography>
+                      </Box>
                     </CardRow>
                   </Card>
                 </>
