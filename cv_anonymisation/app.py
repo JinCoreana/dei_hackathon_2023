@@ -2,6 +2,9 @@ import os
 from flask import Flask, flash, request, redirect, make_response, render_template, send_from_directory
 from werkzeug.utils import secure_filename
 from utils.anonymizer import anonymize
+from dotenv import load_dotenv
+
+load_dotenv()
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 UPLOAD_FOLDER = os.path.join(APP_ROOT, 'CVs/uploads')
@@ -10,7 +13,7 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf'}
 
 app = Flask(__name__)
 # Set the secret key to some random bytes. Keep this really secret!
-app.secret_key = b'vjRyCsBPetq5aW5n'
+app.secret_key = os.getenv('FLASK_KEY')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['DOWNLOAD_FOLDER'] = DOWNLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 * 1000 # Limit file size to 16 MB
@@ -25,7 +28,7 @@ def download_file(name):
 
     return send_from_directory(app.config["DOWNLOAD_FOLDER"], name, as_attachment=False)
 
-@app.route("/anonymise", methods=['GET', 'POST'])
+@app.route("/anonymise", methods=['GET', 'POST']) # type: ignore
 def home():
     if request.method == 'POST':
         # check if the post request has the file part
