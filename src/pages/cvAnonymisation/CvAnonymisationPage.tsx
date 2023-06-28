@@ -66,7 +66,7 @@ const CvAnonymisationPage = () => {
             <CardRow>
               <CardColumn>
                 <Typography variant="h1" mb={4} mt={2}>
-                  Upload Your File
+                  Upload your file
                 </Typography>
                 <Textbox
                   readOnly
