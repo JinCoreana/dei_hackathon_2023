@@ -7,16 +7,13 @@ import Image from "carbon-react/lib/components/image";
 import chatIcon from "../../../assets/images/chat.png";
 const ChatWithUs = (): ReactElement => {
   const navigateTo = useNavigate();
-
-  const chatToUs = [
-    {
-      bgColor: "#007E45",
-      iconImage: chatIcon,
-      title: "Chat to us",
-      subtitle: "(Any questions we can help with)",
-      href: "/chat_with_us",
-    },
-  ];
+  const chatToUs = {
+    bgColor: "#007E45",
+    iconImage: chatIcon,
+    title: "Chat to us",
+    subtitle: "(Any questions we can help with)",
+    href: "/chat_with_us",
+  };
 
   return (
     <>
@@ -33,38 +30,34 @@ const ChatWithUs = (): ReactElement => {
             Is there anything else we can do? Get in touch below to ask us any
             questions.
           </Typography>
-          {chatToUs.map((item) => {
-            return (
-              <>
-                <Box
-                  width={461}
-                  height={221}
-                  bg={item.bgColor}
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
-                  flexDirection="column"
-                  m={3}
-                  borderRadius="borderRadius100"
-                  style={{ cursor: "pointer" }}
-                  onClick={() => (window.location.href = item.href)}
-                >
-                  <Image
-                    width={75}
-                    height={75}
-                    src={item.iconImage}
-                    alt="Get in touch"
-                  />
-                  <Typography color="white" variant="h3" mt={2}>
-                    {item.title}
-                  </Typography>
-                  <Typography color="white" variant="h4" mt={2}>
-                    {item.subtitle}
-                  </Typography>
-                </Box>
-              </>
-            );
-          })}
+          <Box key={chatToUs.title}>
+            <Box
+              width={461}
+              height={221}
+              bg={chatToUs.bgColor}
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              flexDirection="column"
+              m={3}
+              borderRadius="borderRadius100"
+              style={{ cursor: "pointer" }}
+              onClick={() => navigateTo(chatToUs.href)}
+            >
+              <Image
+                width={75}
+                height={75}
+                src={chatToUs.iconImage}
+                alt="Get in touch"
+              />
+              <Typography color="white" variant="h3" mt={2}>
+                {chatToUs.title}
+              </Typography>
+              <Typography color="white" variant="h4" mt={2}>
+                {chatToUs.subtitle}
+              </Typography>
+            </Box>
+          </Box>
         </Box>
       </GridItem>
     </>

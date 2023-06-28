@@ -13,7 +13,7 @@ import SectionTitle from "../../../globalComponents/SectionTitle";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../../context/GlobalContext";
 const QuickLinks = (): ReactElement | null => {
-  const { chosenApplication } = useContext(GlobalContext);
+  const { chosenApplication, setToaster } = useContext(GlobalContext);
   const navigateTo = useNavigate();
   const quicklinkGrid = [
     {
@@ -22,7 +22,7 @@ const QuickLinks = (): ReactElement | null => {
       title: "My Applications",
       subtitle: "View application details and documents",
       external: true,
-      href: "/",
+      href: null,
     },
     {
       bgColor: "#007E45",
@@ -30,7 +30,7 @@ const QuickLinks = (): ReactElement | null => {
       title: "Interview process guide",
       subtitle: "Find out what to expect at each stage",
       external: true,
-      href: "/",
+      href: null,
     },
     {
       bgColor: "#00324C",
@@ -38,7 +38,7 @@ const QuickLinks = (): ReactElement | null => {
       title: "Preparation resources",
       subtitle: "Prepare for interview at your own pace",
       external: true,
-      href: "/",
+      href: null,
     },
     {
       bgColor: "#007E45",
@@ -84,17 +84,17 @@ const QuickLinks = (): ReactElement | null => {
         </Typography>
 
         <Box
-          m="0 100px 0 100px"
+          m="auto"
           display="flex"
           justifyContent="center"
           alignItems="center"
           flexWrap="wrap"
+          style={{ maxWidth: "1500px" }}
         >
           {quicklinkGrid.map((item) => {
             return (
               <>
                 <Box
-                  p={20}
                   width={461}
                   height={221}
                   bg={item.bgColor}
@@ -102,15 +102,16 @@ const QuickLinks = (): ReactElement | null => {
                   justifyContent="center"
                   alignItems="center"
                   flexDirection="column"
-                  flexBasis="28%"
                   m={1}
                   borderRadius="borderRadius100"
                   style={{ cursor: "pointer" }}
-                  onClick={() =>
-                    item.external
+                  onClick={() => {
+                    !item.href
+                      ? setToaster(true)
+                      : item.external
                       ? (window.location.href = item.href)
-                      : navigateTo(item.href)
-                  }
+                      : navigateTo(item.href);
+                  }}
                 >
                   <Image
                     width={75}

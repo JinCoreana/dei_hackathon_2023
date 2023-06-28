@@ -1,60 +1,49 @@
 import Box from "carbon-react/lib/components/box/box.component";
 import Typography from "carbon-react/lib/components/typography/typography.component";
-import { ReactElement } from "react";
+import { Dispatch, ReactElement, SetStateAction, useState } from "react";
 import Image from "carbon-react/lib/components/image";
 import { GridItem } from "carbon-react/lib/components/grid";
-import icon1 from "../../../assets/images/icon1.png";
-import icon2 from "../../../assets/images/icon2.png";
-import icon3 from "../../../assets/images/icon3.png";
-import icon4 from "../../../assets/images/icon4.png";
-import icon5 from "../../../assets/images/icon5.png";
-import icon6 from "../../../assets/images/icon6.png";
-import icon7 from "../../../assets/images/icon7.png";
-import icon8 from "../../../assets/images/icon8.png";
-import icon9 from "../../../assets/images/Fill.png";
 import SectionTitle from "../../../globalComponents/SectionTitle";
+import RequestModal from "./RequestModal";
+import { AdjustRequestPost } from "../AdjustmentRequest.types";
+import { ADJUSTMENT_REQUEST_BUTTONS } from "./contants";
 
-const AdjustmentRequestOptions = (): ReactElement => {
-  const adjustmentGrid = [
-    {
-      bgColor: "#007E45",
-      iconImage: icon1,
-      title: "Request Additional Time",
-      href: "/",
-    },
-    {
-      bgColor: "#00324C",
-      iconImage: icon2,
-      title: "Written Instructions",
-      href: "/",
-    },
+interface AdjustmentRequestOptions {
+  data: AdjustRequestPost[];
+  setData: Dispatch<SetStateAction<AdjustRequestPost[]>>;
+}
 
-    {
-      bgColor: "#007E45",
-      iconImage: icon6,
-      title: "Visual Supports",
-      href: "/",
-    },
+const AdjustmentRequestOptions = ({
+  data,
+  setData,
+}: AdjustmentRequestOptions): ReactElement => {
+  const [isModalOpen, setIsModalOpen] = useState<string[]>(
+    Array(6).fill(false)
+  );
 
-    {
-      bgColor: "#00324C",
-      iconImage: icon8,
-      title: "Clear Communication\t(Direct Language)",
-      href: "/",
-    },
-    {
-      bgColor: "#007E45",
-      iconImage: icon3,
-      title: "Interview Space",
-      href: "/",
-    },
-    {
-      bgColor: "#00324C",
-      iconImage: icon9,
-      title: "Other Adjustment",
-      href: "/",
-    },
-  ];
+  const setModalByNumber = (order: number, modalTitle: string) => {
+    const chosenModal = [...isModalOpen];
+    chosenModal[order] = modalTitle;
+    setIsModalOpen(chosenModal);
+  };
+
+  const OpenModal = () => {
+    const modal = [];
+    for (let i = 0; i < isModalOpen.length; i++) {
+      modal.push(
+        !!isModalOpen[i] && (
+          <Box>
+            <RequestModal
+              modalTitle={isModalOpen[i]}
+              setIsModalOpen={setIsModalOpen}
+              setAdjustmentRequestData={setData}
+            />
+          </Box>
+        )
+      );
+    }
+    return modal;
+  };
 
   return (
     <>
@@ -79,21 +68,22 @@ const AdjustmentRequestOptions = (): ReactElement => {
         </Box>
         <SectionTitle title="Interview adjustments" />
         <Box
+          m="auto"
           display="flex"
           justifyContent="center"
-          alignItems="center"
           flexWrap="wrap"
+          style={{ maxWidth: "1000px" }}
         >
-          {adjustmentGrid.map((item) => {
+          {OpenModal()}
+          {ADJUSTMENT_REQUEST_BUTTONS.map((item, i) => {
             return (
-              <>
+              <Box key={item.title}>
                 <Box
                   display="flex"
                   justifyContent="center"
                   alignItems="center"
                   flexDirection="column"
                   mb={5}
-                  flexBasis="40%"
                 >
                   <Box
                     width={461}
@@ -106,7 +96,7 @@ const AdjustmentRequestOptions = (): ReactElement => {
                     mx={1}
                     style={{ cursor: "pointer" }}
                     borderRadius="borderRadius100"
-                    onClick={() => (window.location.href = item.href)}
+                    onClick={() => setModalByNumber(i, item.modalTitle)}
                   >
                     <Image
                       width={120}
@@ -119,7 +109,7 @@ const AdjustmentRequestOptions = (): ReactElement => {
                     {item.title}
                   </Typography>
                 </Box>
-              </>
+              </Box>
             );
           })}
         </Box>
