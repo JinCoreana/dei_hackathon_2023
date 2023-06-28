@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/dei_hackathon_2023/static/css/main.f2fe4d2f.css",
-    "main.js": "/dei_hackathon_2023/static/js/main.d25d3156.js",
+    "main.js": "/dei_hackathon_2023/static/js/main.57993d34.js",
     "static/media/leftAwards.png": "/dei_hackathon_2023/static/media/leftAwards.b9c56d8eaf48578d1897.png",
     "static/media/rightAwards.png": "/dei_hackathon_2023/static/media/rightAwards.95546855eab1ef06ca77.png",
     "static/media/centreRecongnition.png": "/dei_hackathon_2023/static/media/centreRecongnition.6d3300c6dd67158fb5a3.png",
@@ -21,10 +21,10 @@
     "static/media/SageLogo.png": "/dei_hackathon_2023/static/media/SageLogo.15845df7fa44e18d1084.png",
     "index.html": "/dei_hackathon_2023/index.html",
     "main.f2fe4d2f.css.map": "/dei_hackathon_2023/static/css/main.f2fe4d2f.css.map",
-    "main.d25d3156.js.map": "/dei_hackathon_2023/static/js/main.d25d3156.js.map"
+    "main.57993d34.js.map": "/dei_hackathon_2023/static/js/main.57993d34.js.map"
   },
   "entrypoints": [
     "static/css/main.f2fe4d2f.css",
-    "static/js/main.d25d3156.js"
+    "static/js/main.57993d34.js"
   ]
 }
