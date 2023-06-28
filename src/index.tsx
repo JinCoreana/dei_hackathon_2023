@@ -8,6 +8,7 @@ import AccommodationRequestPage from "./pages/adjustmentRequest/AdjustmentReques
 import ChatBotPage from "./pages/chatbot/ChatBotPage";
 import GlobalStyle from "carbon-react/lib/style/global-style";
 import "carbon-react/lib/style/fonts.css";
+import CvAnonymisationPage from "./pages/cvAnonymisation/CvAnonymisationPage";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,6 +22,7 @@ ReactDOM.render(
             element={<AccommodationRequestPage />}
           />
           <Route path="/chat_with_us" element={<ChatBotPage />} />
+          <Route path="/cv_anonymisation" element={<CvAnonymisationPage />} />
         </Routes>
       </Router>
     </CarbonProvider>
