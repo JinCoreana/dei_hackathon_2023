@@ -8,6 +8,7 @@ import {
   CardColumn,
 } from "carbon-react/lib/components/card";
 import Box from "carbon-react/lib/components/box/box.component";
+import Loader from "carbon-react/lib/components/loader";
 import Input from "carbon-react/lib/__internal__/input";
 import Button from "carbon-react/lib/components/button/button.component";
 import Textbox from "carbon-react/lib/components/textbox/textbox.component";
@@ -16,6 +17,7 @@ import Typography from "carbon-react/lib/components/typography/typography.compon
 const CvAnonymisationPage = () => {
   const [submitData, setSubmitData] = useState();
   const [anonymisedData, setAnonymisedData] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [selectedFile, setSelectedFile] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -33,6 +35,7 @@ const CvAnonymisationPage = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    setIsLoading(true);
     if (submitData) {
       const formData = new FormData();
       formData.append("file", submitData, selectedFile);
@@ -51,6 +54,7 @@ const CvAnonymisationPage = () => {
       } catch (error) {
         console.error(error);
       }
+      setIsLoading(false);
     }
   };
   return (
@@ -107,7 +111,7 @@ const CvAnonymisationPage = () => {
                     onClick={handleSubmit}
                     buttonType="primary"
                   >
-                    Anonymise
+                    {isLoading ? <Loader isInsideButton /> : "Anonymise"}
                   </Button>
                 </Box>
               </Box>
