@@ -1,0 +1,75 @@
+{
+  "autoAnswers": [
+    {
+      "Sage HR Assistance Bot": [
+        {
+          "keywords": [
+            "adjustment for interview",
+            "interview questions",
+            "aids",
+            "accessibility"
+          ],
+          "autoMessage": "We have a section dedicated to support you throughout the application process. By selecting ‘Adjustments’ in the Quick links section, you can request various adjustments to help you succeed.",
+          "external": false,
+          "href": "/dei_hackathon_2023/adjustment_request"
+        },
+        {
+          "keywords": ["interview", "preparation", "prepare for the interview"],
+          "autoMessage": "We have an interview process guide and a list of preparation resources to help support you to prepare for your interview. These can be found in the Quick links section in the main view of your application.",
+          "external": false,
+          "href": null
+        },
+        {
+          "keywords": ["requests for an adjustment", "approved", "in review"],
+          "autoMessage": "To see the status of any of your adjustment requests, please see the ‘My adjustments’ section towards the bottom of the ‘Adjustments’ page.",
+          "external": false,
+          "href": "/dei_hackathon_2023/adjustment_request"
+        },
+        {
+          "keywords": ["status", "application", "progress"],
+          "autoMessage": "To see the status of your application, follow the link below to the homepage and select the role you have applied for in the drop down menu.",
+          "external": false,
+          "href": "/dei_hackathon_2023/"
+        },
+        {
+          "keywords": ["multiple", "roles", "apply", "more than one"],
+          "autoMessage": "Yes, you can apply for more than one role at Sage. Click on the link below to head to our careers section. All the roles you have applied for will appear when you click on ‘My applications’ in the home view.",
+          "external": true,
+          "href": "https://www.sage.com/en-gb/company/careers/career-search/?page=1"
+        }
+      ]
+    },
+    {
+      "Talent Acquisition": [
+        {
+          "keywords": ["progress"],
+          "autoMessage": "It usually takes us 1-2 business days to get back to you on the progress.",
+          "external": false,
+          "href": null
+        },
+        {
+          "keywords": ["salary"],
+          "autoMessage": "The salary range for this position is £X0,000 to £X0,000 per year.",
+          "external": false,
+          "href": null
+        }
+      ]
+    },
+    {
+      "Hiring Manager": [
+        {
+          "keywords": ["more requests"],
+          "autoMessage": "Sure, that's absolutely fine. I will review the new requests and get back to you soon.",
+          "external": false,
+          "href": null
+        },
+        {
+          "keywords": ["24px"],
+          "autoMessage": "Hi XX111, thank you for the answer. Sure,I will ensure that all fonts are displayed at sizes greater than 24px. I'm excited to meet you during the interview.",
+          "external": false,
+          "href": null
+        }
+      ]
+    }
+  ]
+}
