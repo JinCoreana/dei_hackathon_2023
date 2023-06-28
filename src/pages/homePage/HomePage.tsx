@@ -12,16 +12,14 @@ import Toaster from "../../globalComponents/Toaster";
 const HomePage = (): ReactElement => {
   return (
     <>
-      <GlobalContextProvider>
-        <GridContainer p={0}>
-          <Toaster />
-          <NavigationBar />
-          <ProgressTracker />
-          <QuickLinks />
-          <VideoCarousel />
-          <AwardsAndRecognition />
-        </GridContainer>
-      </GlobalContextProvider>
+      <GridContainer p={0}>
+        <NavigationBar />
+        <ProgressTracker />
+        <QuickLinks />
+        <VideoCarousel />
+        <AwardsAndRecognition />
+      </GridContainer>
+      <Toaster />
     </>
   );
 };
