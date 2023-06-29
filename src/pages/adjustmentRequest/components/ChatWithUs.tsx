@@ -5,7 +5,7 @@ import { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
 import Image from "carbon-react/lib/components/image";
 import chatIcon from "../../../assets/images/chat.png";
-import Button from "carbon-react/lib/components/button";
+
 const ChatWithUs = (): ReactElement => {
   const navigateTo = useNavigate();
   const chatToUs = {

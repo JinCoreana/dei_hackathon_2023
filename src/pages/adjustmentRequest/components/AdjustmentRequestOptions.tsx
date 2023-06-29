@@ -7,7 +7,6 @@ import SectionTitle from "../../../globalComponents/SectionTitle";
 import RequestModal from "./RequestModal";
 import { AdjustRequestPost } from "../AdjustmentRequest.types";
 import { ADJUSTMENT_REQUEST_BUTTONS } from "./contants";
-import Button from "carbon-react/lib/components/button";
 
 interface AdjustmentRequestOptionsProps {
   data: AdjustRequestPost[];

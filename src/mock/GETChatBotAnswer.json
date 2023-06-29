@@ -42,14 +42,14 @@
     {
       "Talent Acquisition": [
         {
-          "keywords": ["progress"],
-          "autoMessage": "It usually takes us 1-2 business days to get back to you on the progress.",
+          "keywords": ["salary range", "hoping"],
+          "autoMessage": "Thank you for the response. We normally offer £X0,000 per year for all graduate positions so we are able to meet your expectation.",
           "external": false,
           "href": null
         },
         {
-          "keywords": ["salary"],
-          "autoMessage": "The salary range for this position is £X0,000 to £X0,000 per year.",
+          "keywords": ["amazing", "good afternoon"],
+          "autoMessage": "Thank you, XX111. We will get back to you next week on the progress. Have a great afternoon!",
           "external": false,
           "href": null
         }

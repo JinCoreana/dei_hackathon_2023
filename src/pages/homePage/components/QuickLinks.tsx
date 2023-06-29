@@ -12,7 +12,7 @@ import thirdIcon from "../../../assets/images/check.png";
 import SectionTitle from "../../../globalComponents/SectionTitle";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../../context/GlobalContext";
-import Button from "carbon-react/lib/components/button";
+
 const QuickLinks = (): ReactElement | null => {
   const { chosenApplication, setToaster } = useContext(GlobalContext);
   const navigateTo = useNavigate();

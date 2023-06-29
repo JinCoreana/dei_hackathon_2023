@@ -16,6 +16,11 @@ const ProgressTracker = (): ReactElement => {
 
   return (
     <GridItem alignSelf="stretch" justifySelf="stretch">
+      <Typography fontSize="24px" color="white" style={{ textAlign: "center" }}>
+        Don't forget how passionate we were in the first year in Sage 2023. Dev:
+        Aryan Walia x Jin Choi x Gaurav Khetwal + QA: Anna Sobol
+      </Typography>
+
       <SectionTitle title="Your Sage application journey" mt={50} />
       <Box display="flex" flexDirection="row" alignItems="center">
         <Typography variant="p" fontSize="24px" ml={100} mb={0}>

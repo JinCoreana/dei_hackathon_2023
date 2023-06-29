@@ -78,7 +78,7 @@ const ChatBot = () => {
       console.log(maxMatchResponse);
       if (maxMatchResponse) {
         setAutoAnswer(maxMatchResponse);
-      }
+      } else setAutoAnswer(undefined);
     }
   }, [inputMessage]);
 
