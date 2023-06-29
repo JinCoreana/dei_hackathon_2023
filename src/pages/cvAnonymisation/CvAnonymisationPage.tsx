@@ -13,6 +13,7 @@ import Input from "carbon-react/lib/__internal__/input";
 import Button from "carbon-react/lib/components/button/button.component";
 import Textbox from "carbon-react/lib/components/textbox/textbox.component";
 import Typography from "carbon-react/lib/components/typography/typography.component";
+import axios from "axios";
 
 const CvAnonymisationPage = () => {
   const [submitData, setSubmitData] = useState();
@@ -40,15 +41,16 @@ const CvAnonymisationPage = () => {
       const formData = new FormData();
       formData.append("file", submitData, selectedFile);
       try {
-        const response = await fetch("https://dei-cv-flask.onrender.com", {
-          method: "POST",
-          body: formData,
-        });
-        if (response.ok) {
-          const parsedResponse = await response.text();
+        //Used direct url for now. To be refactored with proxy server
+        const response = await axios.post(
+          "https://dei-cv-flask.onrender.com",
+          formData
+        );
+        if (response) {
+          const parsedResponse = await response.data;
           setAnonymisedData(parsedResponse);
         } else {
-          console.error("Anonymisation Failed", response.status);
+          console.error("Anonymisation Failed", response);
         }
       } catch (error) {
         console.error(error);

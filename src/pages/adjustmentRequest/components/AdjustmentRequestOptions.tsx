@@ -8,7 +8,7 @@ import RequestModal from "./RequestModal";
 import { AdjustRequestPost } from "../AdjustmentRequest.types";
 import { ADJUSTMENT_REQUEST_BUTTONS } from "./contants";
 
-interface AdjustmentRequestOptions {
+interface AdjustmentRequestOptionsProps {
   data: AdjustRequestPost[];
   setData: Dispatch<SetStateAction<AdjustRequestPost[]>>;
 }
@@ -16,7 +16,7 @@ interface AdjustmentRequestOptions {
 const AdjustmentRequestOptions = ({
   data,
   setData,
-}: AdjustmentRequestOptions): ReactElement => {
+}: AdjustmentRequestOptionsProps): ReactElement => {
   const [isModalOpen, setIsModalOpen] = useState<string[]>(
     Array(6).fill(false)
   );

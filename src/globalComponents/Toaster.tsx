@@ -1,5 +1,5 @@
 import Toast from "carbon-react/lib/components/toast";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import Typography from "carbon-react/lib/components/typography/typography.component";
 const Toaster = () => {

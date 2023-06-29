@@ -1,8 +1,6 @@
 import Box from "carbon-react/lib/components/box/box.component";
 import Typography from "carbon-react/lib/components/typography/typography.component";
-
 import Link from "carbon-react/lib/components/link";
-import { useNavigate } from "react-router-dom";
 
 interface ChatMessageProps {
   candidate: boolean;
@@ -17,9 +15,7 @@ const ChatMessage = ({
   message,
   chatAgent,
   hasLink,
-  isExternal,
 }: ChatMessageProps) => {
-  const navigateTo = useNavigate();
   return (
     <Box display="flex" justifyContent={candidate ? "left" : "right"} p={1}>
       <Box

@@ -7,7 +7,7 @@ import {
   CardFooter,
   CardColumn,
 } from "carbon-react/lib/components/card";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../../../context/GlobalContext";
 import ChatBotAnswers from "../../../mock/GETChatBotAnswer.json";
 import Textarea from "carbon-react/lib/components/textarea";
