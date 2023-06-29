@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import CarbonProvider from "carbon-react/lib/components/carbon-provider";
 import { sageTheme } from "carbon-react/lib/style/themes";
 import HomePage from "./pages/homePage/HomePage";
@@ -16,7 +16,7 @@ ReactDOM.render(
     <GlobalStyle />
     <CarbonProvider theme={sageTheme} validationRedesignOptIn>
       <GlobalContextProvider>
-        <Router basename="/dei_hackathon_2023/">
+        <HashRouter>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route
@@ -26,7 +26,7 @@ ReactDOM.render(
             <Route path="/chat_with_us" element={<ChatWithUsPage />} />
             <Route path="/cv_anonymisation" element={<CvAnonymisationPage />} />
           </Routes>
-        </Router>
+        </HashRouter>
       </GlobalContextProvider>
     </CarbonProvider>
   </React.StrictMode>,
