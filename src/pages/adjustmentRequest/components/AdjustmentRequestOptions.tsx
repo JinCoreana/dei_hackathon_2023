@@ -7,6 +7,7 @@ import SectionTitle from "../../../globalComponents/SectionTitle";
 import RequestModal from "./RequestModal";
 import { AdjustRequestPost } from "../AdjustmentRequest.types";
 import { ADJUSTMENT_REQUEST_BUTTONS } from "./contants";
+import Button from "carbon-react/lib/components/button";
 
 interface AdjustmentRequestOptionsProps {
   data: AdjustRequestPost[];
@@ -85,26 +86,32 @@ const AdjustmentRequestOptions = ({
                   flexDirection="column"
                   mb={5}
                 >
-                  <Box
-                    width={461}
-                    height={221}
-                    bg={item.bgColor}
-                    display="flex"
-                    justifyContent="center"
-                    alignItems="center"
-                    flexDirection="column"
-                    mx={1}
-                    style={{ cursor: "pointer" }}
-                    borderRadius="borderRadius100"
+                  <Button
+                    buttonType="tertiary"
                     onClick={() => setModalByNumber(i, item.modalTitle)}
+                    p={0}
+                    m={1}
                   >
-                    <Image
-                      width={120}
-                      height={120}
-                      src={item.iconImage}
-                      alt="Sage won best company culture and best company work-life balance awards in 2021"
-                    />
-                  </Box>
+                    <Box
+                      width={461}
+                      height={221}
+                      bg={item.bgColor}
+                      display="flex"
+                      justifyContent="center"
+                      alignItems="center"
+                      flexDirection="column"
+                      // mx={1}
+                      style={{ cursor: "pointer" }}
+                      borderRadius="borderRadius400"
+                    >
+                      <Image
+                        width={120}
+                        height={120}
+                        src={item.iconImage}
+                        alt="Sage won best company culture and best company work-life balance awards in 2021"
+                      />
+                    </Box>
+                  </Button>
                   <Typography color="black" variant="h1" mt={1}>
                     {item.title}
                   </Typography>

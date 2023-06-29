@@ -46,15 +46,16 @@ const NavigationBar = ({ isNotHomePage }: NavigationBarProps): ReactElement => {
         display="flex"
         flexDirection="row"
       >
-        <Box
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          ml={30}
+        <Button
+          buttonType="tertiary"
           onClick={() => navigateTo("/cv_anonymisation")}
+          p={1}
+          ml={30}
         >
-          <Image src={SageLogo} alt="Sage Icon" width="100" height="56" />
-        </Box>
+          <Box display="flex" justifyContent="center" alignItems="center">
+            <Image src={SageLogo} alt="Sage Icon" width="100" height="56" />
+          </Box>
+        </Button>
         <Box
           flex={1}
           display="flex"
@@ -110,17 +111,17 @@ const NavigationBar = ({ isNotHomePage }: NavigationBarProps): ReactElement => {
               ml={6}
             />
             <MenuItem>
-              <Typography
-                color="black"
-                fontSize="24px"
-                m={0}
-                p={2}
+              <Button
+                buttonType="tertiary"
                 onClick={() => {
                   navigateTo("/");
                 }}
+                p={1}
               >
-                Back to Homepage
-              </Typography>
+                <Typography color="black" fontSize="24px" m={0} p={0}>
+                  Back to Homepage
+                </Typography>
+              </Button>
             </MenuItem>
           </Menu>
         </Box>

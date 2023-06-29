@@ -12,6 +12,7 @@ import thirdIcon from "../../../assets/images/check.png";
 import SectionTitle from "../../../globalComponents/SectionTitle";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../../context/GlobalContext";
+import Button from "carbon-react/lib/components/button";
 const QuickLinks = (): ReactElement | null => {
   const { chosenApplication, setToaster } = useContext(GlobalContext);
   const navigateTo = useNavigate();
@@ -94,17 +95,8 @@ const QuickLinks = (): ReactElement | null => {
           {quicklinkGrid.map((item) => {
             return (
               <>
-                <Box
-                  width={461}
-                  height={221}
-                  bg={item.bgColor}
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
-                  flexDirection="column"
-                  m={1}
-                  borderRadius="borderRadius100"
-                  style={{ cursor: "pointer" }}
+                <Button
+                  buttonType="tertiary"
                   onClick={() => {
                     !item.href
                       ? setToaster(true)
@@ -112,20 +104,41 @@ const QuickLinks = (): ReactElement | null => {
                       ? (window.location.href = item.href)
                       : navigateTo(item.href);
                   }}
+                  p={0}
+                  m={1}
                 >
-                  <Image
-                    width={75}
-                    height={75}
-                    src={item.iconImage}
-                    alt="Sage won best company culture and best company work-life balance awards in 2021"
-                  />
-                  <Typography color="white" variant="h3" fontSize="24px" mt={2}>
-                    {item.title}
-                  </Typography>
-                  <Typography color="white" fontSize="20px" variant="p">
-                    {item.subtitle}
-                  </Typography>
-                </Box>
+                  <Box
+                    width={461}
+                    height={221}
+                    bg={item.bgColor}
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    flexDirection="column"
+                    // m={1}
+                    borderRadius="borderRadius400"
+                    tabIndex="0"
+                    style={{ cursor: "pointer" }}
+                  >
+                    <Image
+                      width={75}
+                      height={75}
+                      src={item.iconImage}
+                      alt="Sage won best company culture and best company work-life balance awards in 2021"
+                    />
+                    <Typography
+                      color="white"
+                      variant="h3"
+                      fontSize="24px"
+                      mt={2}
+                    >
+                      {item.title}
+                    </Typography>
+                    <Typography color="white" fontSize="20px" variant="p">
+                      {item.subtitle}
+                    </Typography>
+                  </Box>
+                </Button>
               </>
             );
           })}
