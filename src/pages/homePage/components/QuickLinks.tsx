@@ -95,8 +95,8 @@ const QuickLinks = (): ReactElement | null => {
           {quicklinkGrid.map((item) => {
             return (
               <>
-                <Button
-                  buttonType="tertiary"
+                <button
+                  className="accessibility_frame"
                   onClick={() => {
                     !item.href
                       ? setToaster(true)
@@ -104,8 +104,6 @@ const QuickLinks = (): ReactElement | null => {
                       ? (window.location.href = item.href)
                       : navigateTo(item.href);
                   }}
-                  p={0}
-                  m={1}
                 >
                   <Box
                     width={461}
@@ -115,9 +113,9 @@ const QuickLinks = (): ReactElement | null => {
                     justifyContent="center"
                     alignItems="center"
                     flexDirection="column"
-                    // m={1}
-                    borderRadius="borderRadius400"
-                    tabIndex="0"
+                    m={1}
+                    borderRadius="borderRadius100"
+                    tabIndex="-1"
                     style={{ cursor: "pointer" }}
                   >
                     <Image
@@ -138,7 +136,7 @@ const QuickLinks = (): ReactElement | null => {
                       {item.subtitle}
                     </Typography>
                   </Box>
-                </Button>
+                </button>
               </>
             );
           })}

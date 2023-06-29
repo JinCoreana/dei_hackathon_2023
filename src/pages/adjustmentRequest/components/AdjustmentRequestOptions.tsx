@@ -86,12 +86,7 @@ const AdjustmentRequestOptions = ({
                   flexDirection="column"
                   mb={5}
                 >
-                  <Button
-                    buttonType="tertiary"
-                    onClick={() => setModalByNumber(i, item.modalTitle)}
-                    p={0}
-                    m={1}
-                  >
+                  <button className="accessibility_frame">
                     <Box
                       width={461}
                       height={221}
@@ -100,9 +95,9 @@ const AdjustmentRequestOptions = ({
                       justifyContent="center"
                       alignItems="center"
                       flexDirection="column"
-                      // mx={1}
+                      mx={1}
                       style={{ cursor: "pointer" }}
-                      borderRadius="borderRadius400"
+                      borderRadius="borderRadius100"
                     >
                       <Image
                         width={120}
@@ -111,7 +106,7 @@ const AdjustmentRequestOptions = ({
                         alt="Sage won best company culture and best company work-life balance awards in 2021"
                       />
                     </Box>
-                  </Button>
+                  </button>
                   <Typography color="black" variant="h1" mt={1}>
                     {item.title}
                   </Typography>

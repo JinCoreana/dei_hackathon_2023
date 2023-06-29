@@ -32,10 +32,9 @@ const ChatWithUs = (): ReactElement => {
             questions.
           </Typography>
           <Box key={chatToUs.title}>
-            <Button
-              buttonType="tertiary"
+            <button
+              className="accessibility_frame"
               onClick={() => navigateTo(chatToUs.href)}
-              p={0}
             >
               <Box
                 width={461}
@@ -46,7 +45,8 @@ const ChatWithUs = (): ReactElement => {
                 alignItems="center"
                 flexDirection="column"
                 m={0}
-                borderRadius="borderRadius400"
+                mb={50}
+                borderRadius="borderRadius100"
                 style={{ cursor: "pointer" }}
                 onClick={() => navigateTo(chatToUs.href)}
               >
@@ -63,7 +63,7 @@ const ChatWithUs = (): ReactElement => {
                   {chatToUs.subtitle}
                 </Typography>
               </Box>
-            </Button>
+            </button>
           </Box>
         </Box>
       </GridItem>

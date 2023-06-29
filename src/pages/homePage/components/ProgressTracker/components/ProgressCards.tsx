@@ -5,7 +5,6 @@ import { Stages, Vacancy } from "../ProgressTracker.types";
 import Typography from "carbon-react/lib/components/typography/typography.component";
 import { borderWidth200 } from "@sage/design-tokens/js/base/common";
 import { GlobalContext } from "../../../../../context/GlobalContext";
-import Button from "carbon-react/lib/components/button/button.component";
 
 interface ProgressCardProps {
   selectedVacancy: Vacancy;
@@ -38,9 +37,8 @@ const ProgressCards = ({
                 bg={selectedStage === stage.title ? "#F5C519" : null}
                 style={{ cursor: "pointer" }}
               >
-                <Button
-                  buttonType="tertiary"
-                  p={0}
+                <button
+                  className="accessibility_frame"
                   onClick={() => {
                     setSelectedStage(stage.title);
                   }}
@@ -90,7 +88,7 @@ const ProgressCards = ({
                       ) : null}
                     </Box>
                   </Box>
-                </Button>
+                </button>
               </Box>
             );
           })}

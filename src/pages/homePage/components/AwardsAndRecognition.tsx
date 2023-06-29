@@ -15,7 +15,8 @@ const AwardsAndRecognition = (): ReactElement => {
           justifyContent="space-around"
           alignItems="center"
           flexWrap="wrap"
-          mt={150}
+          mt={100}
+          mb={100}
         >
           <Image
             width={400}
