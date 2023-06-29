@@ -49,7 +49,6 @@
     "file-loader": "^6.2.0",
     "gh-pages": "^5.0.0",
     "html-loader": "^4.2.0",
-    "gh-pages": "^5.0.0",
     "styled-components": "^4.4.1"
   }
 }

@@ -9,7 +9,6 @@ import ChatWithUsPage from "./pages/chatWithUs/ChatWithUsPage";
 import GlobalStyle from "carbon-react/lib/style/global-style";
 import "carbon-react/lib/style/fonts.css";
 import CvAnonymisationPage from "./pages/cvAnonymisation/CvAnonymisationPage";
-
 import { GlobalContextProvider } from "./context/GlobalContext";
 
 ReactDOM.render(
