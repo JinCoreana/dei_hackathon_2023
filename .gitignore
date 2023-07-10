@@ -1,0 +1,16 @@
+# Dependency directories
+node_modules/
+.vs
+build/
+.DS_Store
+
+# vscode
+.vscode
+.vs
+
+# Server
+venv
+**/__pycache__/
+
+# Security
+.env
