@@ -1,11 +1,33 @@
-# dei_hackathon_2023
-## How to run the app
-1. Download and install Git - [link](https://git-scm.com/downloads) 
-2. Download and install NodeJS -  [link](https://nodejs.org/en/download)
-3. Create a folder on your PC to store the source files
-4. Open the above folder and right click on whitespace anywhere, from the context menu Click Git bash here
-5. Type "Git clone https://github.com/JinCoreana/dei_hackathon_2023.git" and press Enter, it will ask to login using Sage github credentials.
-6. Open the above cloned dei_hackathon_2023 folder in VSCode.
-7. Open the terminal and run the following commands:
-   1. npm install
-   2. npm start  
+# 🌍 Inclusive Hiring Platform (DEI)
+
+> **Sage Graduate Programme Hackathon — Final Project**  
+> A web platform designed to foster Diversity, Equity, and Inclusion (DEI) within the recruitment and hiring process.
+
+---
+
+## 📌 Project Overview
+
+This project was developed as the final showcase for the **Sage Graduate Programme** hackathon.
+
+The platform addresses unconscious bias in conventional recruitment methods, providing organisations with tools to build a more **diverse, equitable, and inclusive** hiring pipeline. It processes candidate CVs in PDF format and extracts insights to facilitate fair screening.
+
+- **Demo:** [https://jincoreana.github.io/dei_hackathon_2023/](https://jincoreana.github.io/dei_hackathon_2023/)
+- **Objective:** To enable fair candidate evaluation by minimising bias throughout the application and shortlisting phases.
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend:** HTML5, CSS3, JavaScript (Hosted on GitHub Pages)
+- **Backend:** Python (Python, Flask API)
+
+---
+
+## 👥 Authors & Contact
+
+- [@aryan-walia](https://github.com/aryan-walia)
+- [@bonachow](https://github.com/bonachow)
+- [@Gauravkhetwal0](https://github.com/Gauravkhetwal0)
+- [@jincoreana](https://github.com/jincoreana)
+- [@mbaldi-sage](https://github.com/mbaldi-sage)
+
